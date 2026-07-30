@@ -1,0 +1,38 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Tue Sep 23 06:10:40 2025
+[*]
+[dumpfile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/Div_TB.vcd"
+[dumpfile_mtime] "Tue Sep 23 06:08:21 2025"
+[dumpfile_size] 10798
+[savefile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/Div.gtkw"
+[timestart] 0
+[size] 1920 1048
+[pos] -91 -91
+*-18.000000 1150000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Div_TB.
+[treeopen] Div_TB.Div_TB0.
+[sst_width] 201
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 311
+@820
+[color] 5
+Div_TB.Div_TB0.Control0.state_name[320:1]
+@24
+[color] 2
+Div_TB.Dividendo[26:0]
+[color] 2
+Div_TB.Divisor[26:0]
+@25
+[color] 7
+Div_TB.Cociente[26:0]
+[color] 7
+Div_TB.Residuo[26:0]
+@28
+Div_TB.clk
+Div_TB.done
+Div_TB.init
+Div_TB.reset
+[pattern_trace] 1
+[pattern_trace] 0

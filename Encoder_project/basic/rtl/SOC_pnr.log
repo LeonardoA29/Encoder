@@ -1,0 +1,350 @@
+Info: constraining clock net 'clk' to 25.00 MHz
+Warning: IO 'spi_clk' is unconstrained in LPF and will be automatically placed
+Warning: IO 'displayReset' is unconstrained in LPF and will be automatically placed
+Warning: IO 'displayCS' is unconstrained in LPF and will be automatically placed
+Warning: IO 'clk_com' is unconstrained in LPF and will be automatically placed
+Warning: IO 'STB' is unconstrained in LPF and will be automatically placed
+Warning: IO 'MOSI' is unconstrained in LPF and will be automatically placed
+Warning: IO 'MISO' is unconstrained in LPF and will be automatically placed
+Warning: IO 'LEDS[4]' is unconstrained in LPF and will be automatically placed
+Warning: IO 'LEDS[3]' is unconstrained in LPF and will be automatically placed
+Warning: IO 'LEDS[2]' is unconstrained in LPF and will be automatically placed
+Warning: IO 'LEDS[1]' is unconstrained in LPF and will be automatically placed
+Warning: IO 'LEDS[0]' is unconstrained in LPF and will be automatically placed
+Warning: IO 'DIO' is unconstrained in LPF and will be automatically placed
+Warning: IO 'DC' is unconstrained in LPF and will be automatically placed
+
+Info: Logic utilisation before packing:
+Info:     Total LUT4s:      2422/24288     9%
+Info:         logic LUTs:   1932/24288     7%
+Info:         carry LUTs:    298/24288     1%
+Info:           RAM LUTs:    128/ 3036     4%
+Info:          RAMW LUTs:     64/ 6072     1%
+
+Info:      Total DFFs:       457/24288     1%
+
+Info: Packing IOs..
+Info: pin 'resetn$tr_io' constrained to Bel 'X6/Y50/PIOA'.
+Info: pin 'clk$tr_io' constrained to Bel 'X0/Y47/PIOC'.
+Info: pin 'TXD$tr_io' constrained to Bel 'X11/Y0/PIOA'.
+Info: pin 'RXD$tr_io' constrained to Bel 'X9/Y0/PIOB'.
+Info: Packing constants..
+Info: Packing carries...
+Info: Packing LUTs...
+Info: Packing LUT5-7s...
+Info: Packing FFs...
+Info:     265 FFs paired with LUTs.
+Info: Generating derived timing constraints...
+Info: Promoting globals...
+Info:     promoting clock net clk$TRELLIS_IO_IN to global network
+Info:     promoting clock net Display0.Display0.SPI0.w_half_spi_clk to global network
+Info: Checksum: 0xb9ce06cb
+
+Info: Device utilisation:
+Info: 	          TRELLIS_IO:    18/  197     9%
+Info: 	                DCCA:     2/   56     3%
+Info: 	              DP16KD:    12/   56    21%
+Info: 	          MULT18X18D:     0/   28     0%
+Info: 	              ALU54B:     0/   14     0%
+Info: 	             EHXPLLL:     0/    2     0%
+Info: 	             EXTREFB:     0/    1     0%
+Info: 	                DCUA:     0/    1     0%
+Info: 	           PCSCLKDIV:     0/    2     0%
+Info: 	             IOLOGIC:     0/  128     0%
+Info: 	            SIOLOGIC:     0/   69     0%
+Info: 	                 GSR:     0/    1     0%
+Info: 	               JTAGG:     0/    1     0%
+Info: 	                OSCG:     0/    1     0%
+Info: 	               SEDGA:     0/    1     0%
+Info: 	                 DTR:     0/    1     0%
+Info: 	             USRMCLK:     0/    1     0%
+Info: 	             CLKDIVF:     0/    4     0%
+Info: 	           ECLKSYNCB:     0/   10     0%
+Info: 	             DLLDELD:     0/    8     0%
+Info: 	              DDRDLL:     0/    4     0%
+Info: 	             DQSBUFM:     0/    8     0%
+Info: 	     TRELLIS_ECLKBUF:     0/    8     0%
+Info: 	        ECLKBRIDGECS:     0/    2     0%
+Info: 	                DCSC:     0/    2     0%
+Info: 	          TRELLIS_FF:   457/24288     1%
+Info: 	        TRELLIS_COMB:  2488/24288    10%
+Info: 	        TRELLIS_RAMW:    32/ 3036     1%
+
+Info: Placed 4 cells based on constraints.
+Info: Creating initial analytic placement for 1218 cells, random placement wirelen = 84262.
+Info:     at initial placer iter 0, wirelen = 1243
+Info:     at initial placer iter 1, wirelen = 1014
+Info:     at initial placer iter 2, wirelen = 1022
+Info:     at initial placer iter 3, wirelen = 1071
+Info: Running main analytical placer, max placement attempts per cell = 1131760.
+Info:     at iteration #1, type ALL: wirelen solved = 983, spread = 15446, legal = 16192; time = 0.03s
+Info:     at iteration #2, type ALL: wirelen solved = 1499, spread = 13634, legal = 14627; time = 0.03s
+Info:     at iteration #3, type ALL: wirelen solved = 2119, spread = 12617, legal = 13478; time = 0.04s
+Info:     at iteration #4, type ALL: wirelen solved = 2436, spread = 13003, legal = 13773; time = 0.03s
+Info:     at iteration #5, type ALL: wirelen solved = 2952, spread = 11128, legal = 12014; time = 0.03s
+Info:     at iteration #6, type ALL: wirelen solved = 3135, spread = 11680, legal = 12474; time = 0.03s
+Info:     at iteration #7, type ALL: wirelen solved = 3602, spread = 11416, legal = 12399; time = 0.04s
+Info:     at iteration #8, type ALL: wirelen solved = 3916, spread = 11502, legal = 12482; time = 0.03s
+Info:     at iteration #9, type ALL: wirelen solved = 4525, spread = 11217, legal = 12743; time = 0.03s
+Info:     at iteration #10, type ALL: wirelen solved = 4412, spread = 12059, legal = 13187; time = 0.03s
+Info: HeAP Placer Time: 0.54s
+Info:   of which solving equations: 0.35s
+Info:   of which spreading cells: 0.04s
+Info:   of which strict legalisation: 0.02s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 1997, wirelen = 12014
+Info:   at iteration #5: temp = 0.000000, timing cost = 1417, wirelen = 9845
+Info:   at iteration #10: temp = 0.000000, timing cost = 1089, wirelen = 9350
+Info:   at iteration #15: temp = 0.000000, timing cost = 1224, wirelen = 9122
+Info:   at iteration #20: temp = 0.000000, timing cost = 1310, wirelen = 8935
+Info:   at iteration #25: temp = 0.000000, timing cost = 1193, wirelen = 8864
+Info:   at iteration #28: temp = 0.000000, timing cost = 1215, wirelen = 8851 
+Info: SA placement time 3.02s
+
+Info: Max frequency for clock '$glbnet$Display0.Display0.SPI0.w_half_spi_clk': 257.67 MHz (PASS at 12.00 MHz)
+Info: Max frequency for clock                     '$glbnet$clk$TRELLIS_IO_IN': 55.00 MHz (PASS at 25.00 MHz)
+
+Info: Max delay <async>                                               -> <async>                                              : 12.24 ns
+Info: Max delay <async>                                               -> posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk: 9.11 ns
+Info: Max delay <async>                                               -> posedge $glbnet$clk$TRELLIS_IO_IN                    : 10.32 ns
+Info: Max delay <async>                                               -> negedge $glbnet$clk$TRELLIS_IO_IN                    : 9.53 ns
+Info: Max delay posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk -> <async>                                              : 7.36 ns
+Info: Max delay posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk -> posedge $glbnet$clk$TRELLIS_IO_IN                    : 3.80 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN                     -> <async>                                              : 8.32 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN                     -> posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk: 9.23 ns
+Info: Max delay negedge $glbnet$clk$TRELLIS_IO_IN                     -> <async>                                              : 6.64 ns
+
+Info: Checksum: 0xaf02fc19
+Info: Routing globals...
+Info:     routing clock net $glbnet$Display0.Display0.SPI0.w_half_spi_clk using global 0
+Info:     routing clock net $glbnet$clk$TRELLIS_IO_IN using global 1
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 9278 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      329        670 |  329   670 |      8877|       0.13       0.13|
+Info:       2000 |      630       1369 |  301   699 |      8361|       0.07       0.20|
+Info:       3000 |      990       2009 |  360   640 |      7950|       0.07       0.27|
+Info:       4000 |     1268       2731 |  278   722 |      7440|       0.07       0.34|
+Info:       5000 |     1659       3340 |  391   609 |      7025|       0.08       0.42|
+Info:       6000 |     1990       4009 |  331   669 |      6561|       0.08       0.50|
+Info:       7000 |     2412       4587 |  422   578 |      6195|       0.08       0.58|
+Info:       8000 |     2769       5230 |  357   643 |      5718|       0.09       0.66|
+Info:       9000 |     3175       5824 |  406   594 |      5289|       0.09       0.75|
+Info:      10000 |     3666       6333 |  491   509 |      4959|       0.08       0.83|
+Info:      11000 |     4084       6915 |  418   582 |      4726|       0.09       0.92|
+Info:      12000 |     4519       7480 |  435   565 |      4447|       0.10       1.02|
+Info:      13000 |     4800       8108 |  281   628 |      3848|       0.08       1.09|
+Info:      14000 |     4946       8813 |  146   705 |      3035|       0.05       1.15|
+Info:      15000 |     5258       9425 |  312   612 |      2465|       0.08       1.23|
+Info:      16000 |     5470      10125 |  212   700 |      1797|       0.08       1.31|
+Info:      17000 |     5602      10924 |  132   799 |       974|       0.09       1.40|
+Info:      18000 |     5666      11545 |   64   621 |        54|       0.08       1.47|
+Info:      18053 |     5666      11576 |    0    31 |         0|       0.01       1.48|
+Info: Routing complete.
+Info: Router1 time 1.48s
+Info: Checksum: 0x0401e94b
+
+Info: Critical path report for clock '$glbnet$Display0.Display0.SPI0.w_half_spi_clk' (posedge -> posedge):
+Info: curr total
+Info:  0.5  0.5  Source Display0.Display0.SPI0.spi_datapath0.sub_state_TRELLIS_FF_Q.Q
+Info:  1.0  1.5    Net Display0.Display0.SPI0.control_SPI0.frst_done_LUT4_D_C[1] (24,35) -> (20,34)
+Info:                Sink Display0.Display0.SPI0.control_SPI0.scnd_ld_LUT4_D.B
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  1.8  Source Display0.Display0.SPI0.control_SPI0.scnd_ld_LUT4_D.F
+Info:  1.0  2.7    Net Display0.Display0.SPI0.control_SPI0.scnd_ld_LUT4_D_Z (20,34) -> (23,36)
+Info:                Sink Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q_6.CE
+Info:  0.0  2.7  Setup Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q_6.CE
+Info: 0.8 ns logic, 2.0 ns routing
+
+Info: Critical path report for clock '$glbnet$clk$TRELLIS_IO_IN' (posedge -> negedge):
+Info: curr total
+Info:  5.8  5.8  Source Display0.Display0.dp_ram0.ram.0.0.DOB0
+Info:  1.1  6.9    Net Display0.Display0.dp_ram0.ram.0.0_DOB0[0] (17,37) -> (20,35)
+Info:                Sink Display0.Display0.addrCtrl0.DC0.DC_input_LUT4_Z.B
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/brams_map.v:46.13-46.16
+Info:  0.2  7.2  Source Display0.Display0.addrCtrl0.DC0.DC_input_LUT4_Z.F
+Info:  0.7  7.8    Net Display0.Display0.w_dat_b[0] (20,35) -> (19,35)
+Info:                Sink Display0.Display0.addrCtrl0.DC0.DC_input_LUT4_D.D
+Info:                Defined in:
+Info:                  SOC.v:88.23-103.5
+Info:                  cores/display/DISPLAY/Integraci￿FFC3￿FFB2n/Display.v:46.17-46.24
+Info:                  cores/display/DISPLAY/Integraci￿FFC3￿FFB2n/perip_Display.v:64.9-80.17
+Info:  0.2  8.1  Source Display0.Display0.addrCtrl0.DC0.DC_input_LUT4_D.F
+Info:  0.1  8.2    Net Display0.Display0.addrCtrl0.DC0.DC_TRELLIS_FF_Q_DI (19,35) -> (19,35)
+Info:                Sink Display0.Display0.addrCtrl0.DC0.DC_TRELLIS_FF_Q.DI
+Info:  0.0  8.2  Setup Display0.Display0.addrCtrl0.DC0.DC_TRELLIS_FF_Q.DI
+Info: 6.3 ns logic, 1.9 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> '<async>':
+Info: curr total
+Info:  0.0  0.0  Source resetn$tr_io.O
+Info:  3.5  3.5    Net resetn$TRELLIS_IO_IN (6,50) -> (31,26)
+Info:                Sink Display0.Display0.SPI0.spi_datapath0.reset_LUT4_Z.D
+Info:                Defined in:
+Info:                  SOC.v:3.17-3.23
+Info:  0.2  3.7  Source Display0.Display0.SPI0.spi_datapath0.reset_LUT4_Z.F
+Info:  2.5  6.3    Net displayReset$TRELLIS_IO_OUT (31,26) -> (33,0)
+Info:                Sink displayReset$tr_io.I
+Info:                Defined in:
+Info:                  SOC.v:11.18-11.30
+Info: 0.2 ns logic, 6.0 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk':
+Info: curr total
+Info:  0.0  0.0  Source resetn$tr_io.O
+Info:  2.1  2.1    Net resetn$TRELLIS_IO_IN (6,50) -> (24,35)
+Info:                Sink Display0.Display0.SPI0.control_SPI0.dn_LUT4_C_1.D
+Info:                Defined in:
+Info:                  SOC.v:3.17-3.23
+Info:  0.2  2.4  Source Display0.Display0.SPI0.control_SPI0.dn_LUT4_C_1.F
+Info:  0.4  2.8    Net Display0.Display0.SPI0.control_SPI0.scnd_ld_LUT4_D_C[0] (24,35) -> (24,35)
+Info:                Sink Display0.Display0.SPI0.control_SPI0.scnd_ld_LUT4_D_C_LUT4_C.C
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  3.1  Source Display0.Display0.SPI0.control_SPI0.scnd_ld_LUT4_D_C_LUT4_C.F
+Info:  1.1  4.1    Net Display0.Display0.SPI0.control_SPI0.frst_done_LUT4_D_C[0] (24,35) -> (22,35)
+Info:                Sink Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q_LSR_LUT4_Z.C
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  4.4  Source Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q_LSR_LUT4_Z.F
+Info:  0.6  5.0    Net Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q_LSR (22,35) -> (20,35)
+Info:                Sink Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q.LSR
+Info:  0.4  5.4  Setup Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q.LSR
+Info: 1.1 ns logic, 4.2 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$clk$TRELLIS_IO_IN':
+Info: curr total
+Info:  0.0  0.0  Source resetn$tr_io.O
+Info:  3.1  3.1    Net resetn$TRELLIS_IO_IN (6,50) -> (23,29)
+Info:                Sink CPU.state_LUT4_D.C
+Info:                Defined in:
+Info:                  SOC.v:3.17-3.23
+Info:  0.2  3.3  Source CPU.state_LUT4_D.F
+Info:  2.4  5.7    Net CPU.rs1_TRELLIS_FF_Q_CE (23,29) -> (19,16)
+Info:                Sink CPU.rs1_TRELLIS_FF_Q_27.CE
+Info:  0.0  5.7  Setup CPU.rs1_TRELLIS_FF_Q_27.CE
+Info: 0.2 ns logic, 5.5 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'negedge $glbnet$clk$TRELLIS_IO_IN':
+Info: curr total
+Info:  0.0  0.0  Source resetn$tr_io.O
+Info:  2.1  2.1    Net resetn$TRELLIS_IO_IN (6,50) -> (24,35)
+Info:                Sink Display0.Display0.SPI0.control_SPI0.dn_LUT4_C_1.D
+Info:                Defined in:
+Info:                  SOC.v:3.17-3.23
+Info:  0.2  2.4  Source Display0.Display0.SPI0.control_SPI0.dn_LUT4_C_1.F
+Info:  0.4  2.8    Net Display0.Display0.SPI0.control_SPI0.scnd_ld_LUT4_D_C[0] (24,35) -> (24,35)
+Info:                Sink Display0.Display0.SPI0.control_SPI0.scnd_ld_LUT4_D_C_LUT4_C.C
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  3.1  Source Display0.Display0.SPI0.control_SPI0.scnd_ld_LUT4_D_C_LUT4_C.F
+Info:  1.0  4.1    Net Display0.Display0.SPI0.control_SPI0.frst_done_LUT4_D_C[0] (24,35) -> (29,35)
+Info:                Sink Display0.Display0.SPI0.control_SPI0.frst_done_LUT4_D.C
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  4.3  Source Display0.Display0.SPI0.control_SPI0.frst_done_LUT4_D.F
+Info:  0.9  5.1    Net Display0.Display0.SPI0.control_SPI0.frst_done_LUT4_D_Z (29,35) -> (32,34)
+Info:                Sink Display0.Display0.SPI0.spiclk0.clk_div_TRELLIS_FF_Q_6.LSR
+Info:  0.4  5.6  Setup Display0.Display0.SPI0.spiclk0.clk_div_TRELLIS_FF_Q_6.LSR
+Info: 1.1 ns logic, 4.4 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk' -> '<async>':
+Info: curr total
+Info:  0.5  0.5  Source Display0.Display0.SPI0.spi_datapath0.MOSI_TRELLIS_FF_Q.Q
+Info:  3.1  3.6    Net MOSI$TRELLIS_IO_OUT (23,35) -> (72,35)
+Info:                Sink MOSI$tr_io.I
+Info:                Defined in:
+Info:                  SOC.v:13.18-13.22
+Info: 0.5 ns logic, 3.1 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk' -> 'posedge $glbnet$clk$TRELLIS_IO_IN':
+Info: curr total
+Info:  0.5  0.5  Source Display0.Display0.SPI0.spi_datapath0.bit_cnt_TRELLIS_FF_Q_3.Q
+Info:  0.9  1.4    Net Display0.Display0.SPI0.spi_datapath0.bit_cnt[3] (27,35) -> (27,36)
+Info:                Sink Display0.Display0.SPI0.spiclk0.spi_clk_LUT4_D_1_Z_PFUMX_ALUT_C0_LUT4_Z.D
+Info:                Defined in:
+Info:                  SOC.v:88.23-103.5
+Info:                  cores/display/DISPLAY/Integraci￿FFC3￿FFB2n/Display.v:83.5-95.23
+Info:                  cores/display/DISPLAY/Integraci￿FFC3￿FFB2n/SPI.v:90.11-90.18
+Info:                  cores/display/DISPLAY/Integraci￿FFC3￿FFB2n/SPI.v:34.5-44.32
+Info:                  cores/display/DISPLAY/Integraci￿FFC3￿FFB2n/perip_Display.v:64.9-80.17
+Info:  0.2  1.6  Source Display0.Display0.SPI0.spiclk0.spi_clk_LUT4_D_1_Z_PFUMX_ALUT_C0_LUT4_Z.F
+Info:  0.4  2.1    Net Display0.Display0.SPI0.spiclk0.spi_clk_LUT4_D_1_Z_PFUMX_ALUT_C0[4] (27,36) -> (27,36)
+Info:                Sink Display0.Display0.SPI0.spiclk0.spi_clk_LUT4_D_1_Z_PFUMX_ALUT_BLUT_LUT4_Z.M
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.3  2.3  Source Display0.Display0.SPI0.spiclk0.spi_clk_LUT4_D_1_Z_PFUMX_ALUT_BLUT_LUT4_Z.OFX
+Info:  0.6  3.0    Net Display0.Display0.SPI0.control_SPI0.state_LUT4_D_C[0] (27,36) -> (26,36)
+Info:                Sink Display0.Display0.SPI0.control_SPI0.state_LUT4_D_1.C
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  3.2  Source Display0.Display0.SPI0.control_SPI0.state_LUT4_D_1.F
+Info:  0.5  3.7    Net Display0.Display0.SPI0.control_SPI0.state_LUT4_D_1_Z[2] (26,36) -> (26,35)
+Info:                Sink Display0.Display0.SPI0.control_SPI0.frst_done_TRELLIS_FF_Q_DI_LUT4_Z.D
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  3.9  Source Display0.Display0.SPI0.control_SPI0.frst_done_TRELLIS_FF_Q_DI_LUT4_Z.F
+Info:  0.1  4.1    Net Display0.Display0.SPI0.control_SPI0.frst_done_TRELLIS_FF_Q_DI (26,35) -> (26,35)
+Info:                Sink Display0.Display0.SPI0.control_SPI0.frst_done_TRELLIS_FF_Q.DI
+Info:  0.0  4.1  Setup Display0.Display0.SPI0.control_SPI0.frst_done_TRELLIS_FF_Q.DI
+Info: 1.5 ns logic, 2.6 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$clk$TRELLIS_IO_IN' -> '<async>':
+Info: curr total
+Info:  0.5  0.5  Source per_uart.ledout_TRELLIS_FF_Q.Q
+Info:  3.5  4.0    Net LEDS[0]$TRELLIS_IO_OUT (15,20) -> (72,20)
+Info:                Sink LEDS[0]$tr_io.I
+Info:                Defined in:
+Info:                  SOC.v:59.6-71.5
+Info:                  cores/uart/perip_uart.v:21.11-21.20
+Info: 0.5 ns logic, 3.5 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$clk$TRELLIS_IO_IN' -> 'posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk':
+Info: curr total
+Info:  5.8  5.8  Source Display0.Display0.dp_ram0.ram.0.1.DOB3
+Info:  1.4  7.2    Net Display0.Display0.dp_ram0.ram.0.1_DOB3[1] (15,37) -> (19,34)
+Info:                Sink Display0.Display0.dp_ram0.ram.0.1_DOB3_LUT4_B.C
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/brams_map.v:46.13-46.16
+Info:  0.2  7.5  Source Display0.Display0.dp_ram0.ram.0.1_DOB3_LUT4_B.F
+Info:  0.0  7.5    Net Display0.Display0.dp_ram0.ram.0.1_DOB3_LUT4_B_Z (19,34) -> (19,34)
+Info:                Sink Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q_9_DI_PFUMX_Z_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  /home/leonardo/oss-cad-suite/lib/../share/yosys/ecp5/cells_map.v:133.22-133.24
+Info:  0.2  7.7  Source Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q_9_DI_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:  0.5  8.1    Net Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q_9_DI (19,34) -> (19,34)
+Info:                Sink Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q_9.M
+Info:  0.0  8.1  Setup Display0.Display0.SPI0.spi_datapath0.data_TRELLIS_FF_Q_9.M
+Info: 6.2 ns logic, 1.9 ns routing
+
+Info: Critical path report for cross-domain path 'negedge $glbnet$clk$TRELLIS_IO_IN' -> '<async>':
+Info: curr total
+Info:  0.5  0.5  Source Display0.Display0.SPI0.spiclk0.spi_clk_TRELLIS_FF_Q.Q
+Info:  2.7  3.2    Net spi_clk$TRELLIS_IO_OUT (29,35) -> (72,35)
+Info:                Sink spi_clk$tr_io.I
+Info:                Defined in:
+Info:                  SOC.v:12.18-12.25
+Info: 0.5 ns logic, 2.7 ns routing
+
+Info: Max frequency for clock '$glbnet$Display0.Display0.SPI0.w_half_spi_clk': 366.30 MHz (PASS at 12.00 MHz)
+Info: Max frequency for clock                     '$glbnet$clk$TRELLIS_IO_IN': 60.91 MHz (PASS at 25.00 MHz)
+
+Info: Max delay <async>                                               -> <async>                                              : 6.28 ns
+Info: Max delay <async>                                               -> posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk: 5.38 ns
+Info: Max delay <async>                                               -> posedge $glbnet$clk$TRELLIS_IO_IN                    : 5.74 ns
+Info: Max delay <async>                                               -> negedge $glbnet$clk$TRELLIS_IO_IN                    : 5.57 ns
+Info: Max delay posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk -> <async>                                              : 3.58 ns
+Info: Max delay posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk -> posedge $glbnet$clk$TRELLIS_IO_IN                    : 4.07 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN                     -> <async>                                              : 4.01 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN                     -> posedge $glbnet$Display0.Display0.SPI0.w_half_spi_clk: 8.11 ns
+Info: Max delay negedge $glbnet$clk$TRELLIS_IO_IN                     -> <async>                                              : 3.19 ns
+
+14 warnings, 0 errors
+
+Info: Program finished normally.

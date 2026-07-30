@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Wed Sep 24 03:50:14 2025
+[*]
+[dumpfile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/perip_Div_TB.vcd"
+[dumpfile_mtime] "Wed Sep 24 03:48:40 2025"
+[dumpfile_size] 11898219
+[savefile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/perip_Div.gtkw"
+[timestart] 0
+[size] 1920 1048
+[pos] -1 -1
+*-8.000000 297 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] peripheral_Div_TB.
+[treeopen] peripheral_Div_TB.peripheral_Dv0.
+[sst_width] 201
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 311
+@28
+[color] 5
+peripheral_Div_TB.clk
+@22
+[color] 1
+peripheral_Div_TB.addr[6:0]
+@24
+[color] 1
+peripheral_Div_TB.d_in[31:0]
+[color] 2
+peripheral_Div_TB.d_out[31:0]
+@28
+[color] 3
+peripheral_Div_TB.cs
+peripheral_Div_TB.rd
+@29
+peripheral_Div_TB.wr
+@28
+peripheral_Div_TB.reset
+[pattern_trace] 1
+[pattern_trace] 0

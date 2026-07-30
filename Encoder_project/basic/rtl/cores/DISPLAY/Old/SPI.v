@@ -1,0 +1,252 @@
+//------------------------------------------------------------mòdulo principal -------------------------------------------------------//
+
+module SPI(reset,clk,init,data_tx,MISO,done,data_rx,spi_clk,MOSI);
+
+    input reset;
+	input clk;             
+	input init;
+    input [15:0]data_tx;
+    input MISO;
+
+    output done;
+    output [15:0]data_rx;
+    output spi_clk;
+    output MOSI;
+
+    wire w_sh;
+    wire w_reset;
+    wire w_load;
+    wire w_send;
+    wire w_z;
+    wire w_x;
+
+control_SPI control0(.reset(reset),.clk(clk),.init(init),.z(w_z),.x(w_x),.spi_clk(spi_clk),.dn(done),.sh(w_sh),.ld(w_load),.sd(w_send));
+spiclk spiclk0(.clk(clk),.init(init),.done(done),.spi_clk(spi_clk),.z(w_z));
+ending ending0(.clk(clk),.shift(w_sh),.load(w_load),.x(w_x));
+data data0(.load(w_load),.shift(w_sh),.send(w_send),.data_tx(data_tx),.MISO(MISO),.MOSI(MOSI),.data_rx(data_rx));
+
+endmodule
+
+//----------------------------------------------modulo de manipulaciòn del registro data ---------------------------------------------//
+
+module data(load,shift,send,data_tx,MISO,MOSI,data_rx);
+   input load;
+   input shift;
+   input send;
+   input [15:0]data_tx;
+   input MISO;
+   
+   output reg[15:0]data_rx;
+   output reg MOSI;
+   
+initial begin
+    data_rx = 0;
+    MOSI = 0;
+end
+
+always @(*)begin
+    if (load) data_rx = data_tx;
+    else if (shift) data_rx = {MISO,data_rx[15:1]};
+    else if (send) MOSI = data_rx[0];
+end
+
+endmodule
+
+//----------------------------------------------------------modulo señal de reloj ----------------------------------------------------//
+
+module spiclk(clk,init,done,spi_clk,z);
+
+    input clk;
+    input done;
+    input init;
+    
+    output reg spi_clk;
+    output z;
+
+reg [14:0]medio_periodo = 5;
+reg [14:0] count;
+reg tmp0;
+reg enable;
+
+initial begin 
+    spi_clk = 0;
+    tmp0 = 0;
+    count = 0;
+    enable = 0;
+end
+
+assign z = tmp0;
+
+always @(posedge clk)begin
+  
+    if ((enable ==1 || count != 0) && done == 0)begin
+        if ((count - 1) == medio_periodo)begin
+            spi_clk = ~spi_clk;
+            count = 1;
+            tmp0 = 1;
+        end
+        else begin
+            tmp0 = 0;
+            count = count +1;
+        end
+    end
+    else if (done == 1) count = 0;
+    enable = init;
+end
+
+endmodule
+//-------------------------------------------------------mòdulo para de finalizaciòn -------------------------------------------------//
+
+module ending(clk,shift,load,x);
+
+input clk;
+input shift;
+input load;
+
+output x;
+
+reg tmp;
+assign x = tmp;
+
+reg [3:0] bit_cnt;
+reg [4:0]size_pack =8;
+initial begin 
+    tmp = 0;
+    bit_cnt = 0;
+end
+
+always @(posedge clk)begin
+
+    if (load) bit_cnt = 0;
+    else if (shift) bit_cnt = bit_cnt +1;
+    tmp = (bit_cnt == size_pack)? 1'b1:1'b0;
+    
+end
+
+endmodule
+
+//------------------------------------------------------------mòdulo control ---------------------------------------------------------//
+
+module control_SPI(reset,clk,init,z,x,spi_clk,dn,sh,ld,sd);
+	input reset;
+	input clk;             
+	input init;
+    input z;
+    input x;
+    input spi_clk;
+
+	output reg dn; 
+    output reg sh;
+    output reg ld;
+    output reg sd;     
+    			
+parameter START = 3'b000, LOAD = 3'b001, SEND = 3'b010,SHIFT = 3'b011, SPI_CLK = 3'b100, DONE = 3'b101;
+reg [2:0] state;
+
+initial begin 
+    dn = 0;
+    sh = 0;
+    sd = 0;
+    ld = 0;
+    state = 0;
+end 
+always @(negedge clk) begin
+    if (reset == 1) begin 
+        state = START;
+    end
+    else begin 
+    case (state)
+        START:
+
+            if (init) state = LOAD;
+            else state = START;
+            
+        LOAD:
+
+            state = SPI_CLK;
+
+        SPI_CLK:
+            
+            if (x) begin
+               state = DONE;
+            end 
+            else begin
+                if(z)   begin
+                    if (spi_clk)
+                       state = SEND;
+                    else 
+                       state = SHIFT;
+                end else
+                    state = SPI_CLK;
+            end
+        SEND:
+            state = SPI_CLK;
+        SHIFT:
+            state = SPI_CLK;
+        DONE:
+            state = START;
+
+        default:
+            state = START;
+    endcase
+   end
+end
+
+always @(*) begin
+    case (state)
+        START: begin     
+            sh = 0;
+            ld = 0;
+            sd = 0;
+        end
+
+        LOAD: begin
+            dn = 0;
+            sh = 0;
+            ld = 1;
+            sd = 0;
+        end
+        SPI_CLK: begin 
+            dn = 0;
+            sh = 0;
+            ld = 0;
+            sd = 0;
+        end
+        SEND: begin
+            dn = 0;
+            sh = 0;
+            ld = 0;
+            sd = 1;
+        end
+        
+        SHIFT: begin 
+            dn = 0;
+            sh = 1;
+            ld = 0;
+            sd = 0;
+        end     
+        DONE: begin
+            dn = 1;
+            sh = 0;
+            ld = 0;
+            sd = 0;
+        end
+    endcase
+end
+
+`ifdef BENCH
+reg [8*40:1] state_name;
+always @(*) begin
+  case(state)
+    START    : state_name = "START";
+    LOAD   : state_name = "LOAD";
+    SEND    : state_name = "SEND";
+    SPI_CLK   : state_name = "SPI_CLK";
+    SHIFT    : state_name = "SHIFT";
+    DONE    : state_name = "DONE";
+  endcase
+end
+`endif
+endmodule
+
+

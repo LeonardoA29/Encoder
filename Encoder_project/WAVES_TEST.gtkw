@@ -1,0 +1,183 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Thu Jul 30 18:58:07 2026
+[*]
+[dumpfile] "/home/leonardoa29/Google_Drive/Digital_repo_base/Encoder_project/Encoder_TB.vcd"
+[dumpfile_mtime] "Thu Jul 30 18:57:42 2026"
+[dumpfile_size] 122112
+[savefile] "/home/leonardoa29/Google_Drive/Digital_repo_base/Encoder_project/WAVES_TEST.gtkw"
+[timestart] 1513000
+[size] 1920 1016
+[pos] -101 -101
+*-18.244133 2305000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Encoder_tb.
+[treeopen] Encoder_tb.DUT.
+[treeopen] Encoder_tb.DUT.Cordic0.
+[sst_width] 233
+[signals_width] 323
+[sst_expanded] 1
+[sst_vpaned_height] 577
+@28
+Encoder_tb.clk_adc_A
+@29
+Encoder_tb.clk_adc_B
+@40000420
+[fpshift_count] 3
+Encoder_tb.Speed_out[15:0]
+[fpshift_count] 3
+Encoder_tb.angle_out[13:0]
+[fpshift_count] 3
+Encoder_tb.clk
+[fpshift_count] 3
+Encoder_tb.module_init
+[fpshift_count] 3
+Encoder_tb.reset
+[fpshift_count] 3
+Encoder_tb.sampler_done
+[fpshift_count] 3
+Encoder_tb.sampler_init
+[fpshift_count] 3
+Encoder_tb.x_in[11:0]
+[fpshift_count] 3
+Encoder_tb.y_in[11:0]
+@28
+Encoder_tb.DUT.Cordic0.sh
+Encoder_tb.DUT.Cordic0.calc
+Encoder_tb.DUT.Cordic0.clk
+@200
+-Primera Iteración del Cordic
+@420
+Encoder_tb.DUT.Cordic0.first_iter.X_out[12:0]
+Encoder_tb.DUT.Cordic0.first_iter.Y_out[12:0]
+@40000420
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.first_iter.angle_out[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.first_iter.calc
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.first_iter.clk
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.first_iter.reset
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.first_iter.sh
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.first_iter.x_in[12:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.first_iter.y_in[12:0]
+@200
+-Segunda iteración
+@420
+Encoder_tb.DUT.Cordic0.iter1.X_in_reg[12:0]
+Encoder_tb.DUT.Cordic0.iter1.Y_in_reg[12:0]
+@40000420
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter1.angle_in_reg[13:0]
+@420
+Encoder_tb.DUT.Cordic0.iter1.X_out[12:0]
+Encoder_tb.DUT.Cordic0.iter1.Y_out[12:0]
+@40000420
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter1.angle_out[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter1.calc
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter1.sh
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter1.clk
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter1.d
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter1.reset
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter1.x_in[12:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter1.y_in[12:0]
+@200
+-Tercera
+@420
+Encoder_tb.DUT.Cordic0.iter2.X_in_reg[12:0]
+Encoder_tb.DUT.Cordic0.iter2.Y_in_reg[12:0]
+Encoder_tb.DUT.Cordic0.iter2.X_out[12:0]
+Encoder_tb.DUT.Cordic0.iter2.Y_out[12:0]
+@40000420
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter2.angle_in[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter2.angle_in_reg[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter2.angle_out[13:0]
+@420
+Encoder_tb.DUT.Cordic0.iter2.calc
+Encoder_tb.DUT.Cordic0.iter2.sh
+Encoder_tb.DUT.Cordic0.iter2.clk
+Encoder_tb.DUT.Cordic0.iter2.d
+Encoder_tb.DUT.Cordic0.iter2.reset
+Encoder_tb.DUT.Cordic0.iter2.x_in[12:0]
+Encoder_tb.DUT.Cordic0.iter2.y_in[12:0]
+@200
+-Iteración 10
+@420
+Encoder_tb.DUT.Cordic0.iter10.X_in_reg[12:0]
+Encoder_tb.DUT.Cordic0.iter10.X_out[12:0]
+@c00420
+Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+@28
+(0)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(1)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(2)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(3)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(4)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(5)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(6)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(7)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(8)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(9)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(10)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(11)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+(12)Encoder_tb.DUT.Cordic0.iter10.Y_in_reg[12:0]
+@1401200
+-group_end
+@420
+Encoder_tb.DUT.Cordic0.iter10.Y_out[12:0]
+@40000420
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter10.angle_in[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter10.angle_in_reg[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Cordic0.iter10.angle_out[13:0]
+@420
+Encoder_tb.DUT.Cordic0.iter10.sh
+Encoder_tb.DUT.Cordic0.iter10.calc
+Encoder_tb.DUT.Cordic0.iter10.clk
+Encoder_tb.DUT.Cordic0.iter10.d
+Encoder_tb.DUT.Cordic0.iter10.reset
+Encoder_tb.DUT.Cordic0.iter10.x_in[12:0]
+Encoder_tb.DUT.Cordic0.iter10.y_in[12:0]
+@200
+-Derivador
+@40000420
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.Angle_in[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.Angle_t1_wire[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.Angle_t2_wire[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.Angle_t3_wire[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.Angle_t4_wire[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.Angle_t5_wire[13:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.Speed_out[15:0]
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.calc
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.clk
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.reset
+[fpshift_count] 3
+Encoder_tb.DUT.Derivator0.sh
+[pattern_trace] 1
+[pattern_trace] 0
