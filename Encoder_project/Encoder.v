@@ -4,7 +4,6 @@ module Encoder(
     input sampler_init,
     input module_init,
 
-    // Entradas individuales del ADC de canal X (12 bits en paralelo, un pin por bit)
     input x_in_11,
     input x_in_10,
     input x_in_9,
@@ -18,7 +17,6 @@ module Encoder(
     input x_in_1,
     input x_in_0,
 
-    // Entradas individuales del ADC de canal Y (12 bits en paralelo, un pin por bit)
     input y_in_11,
     input y_in_10,
     input y_in_9,

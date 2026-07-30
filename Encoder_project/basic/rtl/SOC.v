@@ -11,24 +11,52 @@ module SOC (
     output displayCS,
     output spi_clk,
     output MOSI
-    */
-    //Siete segmentos 
+   //  */
+   //  //Siete segmentos 
     
-    output       DIO,
-    output       STB,
-    output       clk_com,
+   //  output       DIO,
+   //  output       STB,
+   //  output       clk_com,
    
-    //Teclado
+   //  //Teclado
    
-    input        C0,
-    input        C1,
-    input        C2,
-    input        C3,
+   //  input        C0,
+   //  input        C1,
+   //  input        C2,
+   //  input        C3,
 
-    output       R0,
-    output       R1,
-    output       R2,
-    output       R3
+   //  output       R0,
+   //  output       R1,
+   //  output       R2,
+   //  output       R3
+    input x_in_11,
+    input x_in_10,
+    input x_in_9,
+    input x_in_8,
+    input x_in_7,
+    input x_in_6,
+    input x_in_5,
+    input x_in_4,
+    input x_in_3,
+    input x_in_2,
+    input x_in_1,
+    input x_in_0,
+
+    input y_in_11,
+    input y_in_10,
+    input y_in_9,
+    input y_in_8,
+    input y_in_7,
+    input y_in_6,
+    input y_in_5,
+    input y_in_4,
+    input y_in_3,
+    input y_in_2,
+    input y_in_1,
+    input y_in_0,
+
+    output clk_adc_A,
+    output clk_adc_B
    
 );
    wire [31:0] mem_addr;
@@ -88,92 +116,92 @@ module SOC (
      .ledout(LEDS)
    ); 
 
-   peripheral_Teclado tcl1(
-      .clk(clk),
-      .reset(!resetn),
-      .d_in(mem_wdata[0]), 
-		.cs(cs[7]), 
-		.addr(mem_addr[4:0]), 
-		.rd(rd), 
-		.wr(wr), 
-		.d_out(Teclado_dout),
-      .C0(C0),
-      .C1(C1),
-      .C2(C2),
-      .C3(C3),
-      .R0(R0),
-      .R1(R1),
-      .R2(R2),
-      .R3(R3)
-   );
+   // peripheral_Teclado tcl1(
+   //    .clk(clk),
+   //    .reset(!resetn),
+   //    .d_in(mem_wdata[0]), 
+	// 	.cs(cs[7]), 
+	// 	.addr(mem_addr[4:0]), 
+	// 	.rd(rd), 
+	// 	.wr(wr), 
+	// 	.d_out(Teclado_dout),
+   //    .C0(C0),
+   //    .C1(C1),
+   //    .C2(C2),
+   //    .C3(C3),
+   //    .R0(R0),
+   //    .R1(R1),
+   //    .R2(R2),
+   //    .R3(R3)
+   // );
 
-   peripheral_Rdd RDD1(
-      .clk (clk), 
-      .reset (!resetn), 
-      .d_in (mem_wdata), 
-      .cs (cs[6]), 
-      .addr (mem_addr[4:0]), 
-      .rd (rd), 
-      .wr(wr), 
-      .d_out (bdc2bin_dout) 
-   );
+   // peripheral_Rdd RDD1(
+   //    .clk (clk), 
+   //    .reset (!resetn), 
+   //    .d_in (mem_wdata), 
+   //    .cs (cs[6]), 
+   //    .addr (mem_addr[4:0]), 
+   //    .rd (rd), 
+   //    .wr(wr), 
+   //    .d_out (bdc2bin_dout) 
+   // );
    
-	peripheral_mult mult1 (
-		.clk(clk), 
-		.reset(!resetn), 
-		.d_in(mem_wdata), 
-		.cs(cs[8]), 
-		.addr(mem_addr[4:0]), 
-		.rd(rd), 
-		.wr(wr), 
-		.d_out(mult_dout) 
-	);
+	// peripheral_mult mult1 (
+	// 	.clk(clk), 
+	// 	.reset(!resetn), 
+	// 	.d_in(mem_wdata), 
+	// 	.cs(cs[8]), 
+	// 	.addr(mem_addr[4:0]), 
+	// 	.rd(rd), 
+	// 	.wr(wr), 
+	// 	.d_out(mult_dout) 
+	// );
 
 
-   peripheral_div div1 (
-      .clk (clk), 
-      .reset (!resetn), 
-      .d_in (mem_wdata), 
-      .cs (cs[4]), 
-      .addr (mem_addr[4:0]), 
-      .rd (rd), 
-      .wr(wr), 
-      .d_out (div_dout) );
+   // peripheral_div div1 (
+   //    .clk (clk), 
+   //    .reset (!resetn), 
+   //    .d_in (mem_wdata), 
+   //    .cs (cs[4]), 
+   //    .addr (mem_addr[4:0]), 
+   //    .rd (rd), 
+   //    .wr(wr), 
+   //    .d_out (div_dout) );
 
-   peripheral_Root root1 (
-      .clk (clk), 
-      .reset (!resetn), 
-      .d_in (mem_wdata), 
-      .cs (cs[3]), 
-      .addr (mem_addr[4:0]), 
-      .rd (rd), 
-      .wr(wr), 
-      .d_out (root_dout) );
+   // peripheral_Root root1 (
+   //    .clk (clk), 
+   //    .reset (!resetn), 
+   //    .d_in (mem_wdata), 
+   //    .cs (cs[3]), 
+   //    .addr (mem_addr[4:0]), 
+   //    .rd (rd), 
+   //    .wr(wr), 
+   //    .d_out (root_dout) );
 
-   peripheral_dd DD1(
-      .clk (clk), 
-      .reset (!resetn), 
-      .d_in (mem_wdata), 
-      .cs (cs[2]), 
-      .addr (mem_addr[4:0]), 
-      .rd (rd), 
-      .wr(wr), 
-      .d_out (bin2bcd_dout) );
+   // peripheral_dd DD1(
+   //    .clk (clk), 
+   //    .reset (!resetn), 
+   //    .d_in (mem_wdata), 
+   //    .cs (cs[2]), 
+   //    .addr (mem_addr[4:0]), 
+   //    .rd (rd), 
+   //    .wr(wr), 
+   //    .d_out (bin2bcd_dout) );
    
 
 
-   peripheral_Led Led1(
-     .clk(clk), 
-     .reset(!resetn), 
-	  .d_in(mem_wdata),
-	  .rd(rd),
-	  .wr(wr),
-	  .cs(cs[1]),
-	  .addr(mem_addr[6:0]),
-	  .DIO(DIO),
-	  .clk_com(clk_com),
-	  .STB(STB),
-	  .d_out(Led_dout));
+   // peripheral_Led Led1(
+   //   .clk(clk), 
+   //   .reset(!resetn), 
+	//   .d_in(mem_wdata),
+	//   .rd(rd),
+	//   .wr(wr),
+	//   .cs(cs[1]),
+	//   .addr(mem_addr[6:0]),
+	//   .DIO(DIO),
+	//   .clk_com(clk_com),
+	//   .STB(STB),
+	//   .d_out(Led_dout));
 
 /*
    peripheral_Display peripheral_Display0 (
@@ -206,7 +234,26 @@ module SOC (
       .wr(wr),
       .d_out(dpram_dout)
   );
+
+  
 */
+
+   Encoder Enc0 (
+    .clk(clk),
+    .reset(reset),
+
+
+    .x_in_11(x_in_11), .x_in_10(x_in_10), .x_in_9(x_in_9), .x_in_8(x_in_8),
+    .x_in_7(x_in_7),   .x_in_6(x_in_6),   .x_in_5(x_in_5), .x_in_4(x_in_4),
+    .x_in_3(x_in_3),   .x_in_2(x_in_2),   .x_in_1(x_in_1), .x_in_0(x_in_0),
+
+    .y_in_11(y_in_11), .y_in_10(y_in_10), .y_in_9(y_in_9), .y_in_8(y_in_8),
+    .y_in_7(y_in_7),   .y_in_6(y_in_6),   .y_in_5(y_in_5), .y_in_4(y_in_4),
+    .y_in_3(y_in_3),   .y_in_2(y_in_2),   .y_in_1(y_in_1), .y_in_0(y_in_0),
+
+    .clk_adc_A(clk_adc_A),
+    .clk_adc_B(clk_adc_B)
+);
   // ============== Chip_Select (Addres decoder) ======================== 
   // se hace con los 8 bits mas significativos de mem_addr
   // Se asigna el rango de la memoria de programa 0x00000000 - 0x003FFFFF
