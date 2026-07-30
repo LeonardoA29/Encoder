@@ -1,0 +1,43 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Tue Sep 30 08:50:50 2025
+[*]
+[dumpfile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/Led/frac_bcd_TB.vcd"
+[dumpfile_mtime] "Tue Sep 30 08:48:18 2025"
+[dumpfile_size] 36984
+[savefile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/Led/frac_bcd.gtkw"
+[timestart] 2220000
+[size] 1920 1048
+[pos] -91 -91
+*-21.000000 5150000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] frac_bcd_TB.
+[treeopen] frac_bcd_TB.frac_bcd_TB0.
+[sst_width] 201
+[signals_width] 251
+[sst_expanded] 1
+[sst_vpaned_height] 311
+@820
+[color] 5
+frac_bcd_TB.frac_bcd_TB0.Control0.state_name[320:1]
+@28
+[color] 6
+frac_bcd_TB.clk
+[color] 6
+frac_bcd_TB.STB
+@22
+[color] 1
+frac_bcd_TB.nibble[3:0]
+@28
+[color] 2
+frac_bcd_TB.init_send
+@29
+[color] 3
+frac_bcd_TB.done
+@22
+frac_bcd_TB.in_Bcd[31:0]
+@28
+frac_bcd_TB.init
+frac_bcd_TB.reset
+frac_bcd_TB.transmision_done
+[pattern_trace] 1
+[pattern_trace] 0

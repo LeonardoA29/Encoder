@@ -1,0 +1,72 @@
+// ---------------------------------------------------------------------
+// Encoder_pins.lpf
+// Restricciones de ubicación de pines (LOCATE COMP / IOBUF PORT)
+// para el modulo Encoder.
+//
+// IMPORTANTE: los valores de SITE puestos aqui son PLACEHOLDERS
+// ("XX"). Reemplaza cada "XX" por el pin físico real de tu FPGA
+// (ver datasheet / pinout de tu placa) antes de compilar.
+//
+// PULLMODE=DOWN se dejo en las entradas de datos (x_in_*/y_in_*)
+// para que no queden flotando si el ADC no esta conectado o esta
+// en alta impedancia; ajústalo si tu ADC ya tiene su propio pull
+// o si usas una polaridad distinta.
+// ---------------------------------------------------------------------
+
+// --- Canal X (ADC 12 bits) ---
+LOCATE COMP    "x_in_11" SITE "G16";
+IOBUF PORT     "x_in_11" IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_10" SITE "F16";
+IOBUF PORT     "x_in_10" IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_9"  SITE "F17";
+IOBUF PORT     "x_in_9"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_8"  SITE "E17";
+IOBUF PORT     "x_in_8"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_7"  SITE "E16";
+IOBUF PORT     "x_in_7"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_6"  SITE "D17";
+IOBUF PORT     "x_in_6"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_5"  SITE "D18";
+IOBUF PORT     "x_in_5"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_4"  SITE "D16";
+IOBUF PORT     "x_in_4"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_3"  SITE "G5";
+IOBUF PORT     "x_in_3"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_2"  SITE "E6";
+IOBUF PORT     "x_in_2"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_1"  SITE "F5";
+IOBUF PORT     "x_in_1"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "x_in_0"  SITE "F4";
+IOBUF PORT     "x_in_0"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+
+// --- Canal Y (ADC 12 bits) ---
+LOCATE COMP    "y_in_11" SITE "M1";
+IOBUF PORT     "y_in_11" IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_10" SITE "T2";
+IOBUF PORT     "y_in_10" IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_9"  SITE "N3";
+IOBUF PORT     "y_in_9"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_8"  SITE "T3";
+IOBUF PORT     "y_in_8"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_7"  SITE "M3";
+IOBUF PORT     "y_in_7"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_6"  SITE "N4";
+IOBUF PORT     "y_in_6"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_5"  SITE "R3";
+IOBUF PORT     "y_in_5"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_4"  SITE "L4";
+IOBUF PORT     "y_in_4"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_3"  SITE "M4";
+IOBUF PORT     "y_in_3"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_2"  SITE "P16";
+IOBUF PORT     "y_in_2"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_1"  SITE "L5";
+IOBUF PORT     "y_in_1"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+LOCATE COMP    "y_in_0"  SITE "J18";
+IOBUF PORT     "y_in_0"  IO_TYPE=LVCMOS33 PULLMODE=DOWN;
+
+// --- Salida de reloj hacia el ADC ---
+LOCATE COMP    "clk_adc_A" SITE "E5";
+IOBUF PORT     "clk_adc_A" IO_TYPE=LVCMOS33;
+LOCATE COMP    "clk_adc_B" SITE "J16";
+IOBUF PORT     "clk_adc_B" IO_TYPE=LVCMOS33;

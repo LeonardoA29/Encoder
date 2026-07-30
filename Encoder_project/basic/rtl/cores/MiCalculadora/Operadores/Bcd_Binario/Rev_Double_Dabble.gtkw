@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Mon Sep 29 11:10:28 2025
+[*]
+[dumpfile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/Operadores/Bcd_Binario/Rev_Double_Dabble_TB.vcd"
+[dumpfile_mtime] "Mon Sep 29 11:06:30 2025"
+[dumpfile_size] 15284
+[savefile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/Operadores/Bcd_Binario/Rev_Double_Dabble.gtkw"
+[timestart] 0
+[size] 1920 1048
+[pos] -1 -1
+*-16.000000 81500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Rev_Double_Dabble_TB.
+[treeopen] Rev_Double_Dabble_TB.R_DD_TB.
+[sst_width] 201
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 311
+@820
+[color] 5
+Rev_Double_Dabble_TB.R_DD_TB.Control0.state_name[320:1]
+@28
+[color] 1
+Rev_Double_Dabble_TB.clk
+@22
+[color] 2
+Rev_Double_Dabble_TB.in_Bcd[31:0]
+[color] 3
+Rev_Double_Dabble_TB.out_Bin[26:0]
+@29
+[color] 6
+Rev_Double_Dabble_TB.done
+@28
+Rev_Double_Dabble_TB.init
+Rev_Double_Dabble_TB.reset
+[pattern_trace] 1
+[pattern_trace] 0

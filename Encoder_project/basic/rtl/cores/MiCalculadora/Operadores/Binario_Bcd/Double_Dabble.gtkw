@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Sun Sep 21 22:42:40 2025
+[*]
+[dumpfile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/Root_TB.vcd"
+[dumpfile_mtime] "Sun Sep 21 22:41:34 2025"
+[dumpfile_size] 8259
+[savefile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/Double_Dabble.gtkw"
+[timestart] 0
+[size] 1920 1048
+[pos] -131 -131
+*-18.000000 790000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Root_TB.
+[treeopen] Root_TB.Rt_TB.
+[sst_width] 201
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 311
+@820
+[color] 5
+Root_TB.Rt_TB.Control0.state_name[320:1]
+@24
+[color] 7
+Root_TB.Rt_TB.Data_path0.Radicando[27:0]
+[color] 2
+Root_TB.Rt_TB.Data_path0.Raiz[13:0]
+[color] 2
+Root_TB.Rt_TB.Data_path0.Residuo[27:0]
+@28
+Root_TB.Rt_TB.Data_path0.Residuo_Aux[27:0]
+Root_TB.Rt_TB.Data_path0.Raiz_Aux[14:0]
+@25
+Root_TB.Rt_TB.Data_path0.Shifts_cnt[4:0]
+@28
+Root_TB.Rt_TB.Data_path0.clk
+[pattern_trace] 1
+[pattern_trace] 0

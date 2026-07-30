@@ -1,0 +1,36 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Tue Sep 30 08:47:19 2025
+[*]
+[dumpfile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/Led/Led_TB.vcd"
+[dumpfile_mtime] "Tue Sep 30 08:45:09 2025"
+[dumpfile_size] 1098478
+[savefile] "/home/leonardo/github-classroom/Digital-II/verilogs-LeonardoA29/Calculadora/Verilog/Led/Top.gtkw"
+[timestart] 0
+[size] 1920 1048
+[pos] -1 -1
+*-23.000000 17190000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Led_TB.
+[treeopen] Led_TB.Led_TB.
+[sst_width] 201
+[signals_width] 251
+[sst_expanded] 1
+[sst_vpaned_height] 311
+@28
+[color] 5
+Led_TB.clk_com
+[color] 6
+Led_TB.STB
+[color] 7
+Led_TB.DIO
+[color] 1
+Led_TB.done
+@22
+[color] 2
+Led_TB.in_Bcd[31:0]
+@28
+[color] 3
+Led_TB.init
+Led_TB.reset
+[pattern_trace] 1
+[pattern_trace] 0

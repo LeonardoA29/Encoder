@@ -1,0 +1,78 @@
+[*]
+[*] GTKWave Analyzer v3.3.117 (w)1999-2023 BSI
+[*] Mon Dec  8 18:13:21 2025
+[*]
+[dumpfile] "/home/leonardo/Descargas/digital_UN/Digital_II/digital_UN/femtoRV/basic/rtl/cores/Led_panel_128bpp/led_panel_128_TB.vcd"
+[dumpfile_mtime] "Mon Dec  8 18:10:01 2025"
+[dumpfile_size] 7203301
+[savefile] "/home/leonardo/Descargas/digital_UN/Digital_II/digital_UN/femtoRV/basic/rtl/cores/Led_panel_128bpp/Maquina_de_estados.gtkw"
+[timestart] 34712000
+[size] 1920 1048
+[pos] -1 -1
+*-20.000000 38550000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] led_panel_128_TB.
+[treeopen] led_panel_128_TB.uut.
+[sst_width] 201
+[signals_width] 253
+[sst_expanded] 1
+[sst_vpaned_height] 311
+@29
+led_panel_128_TB.Led_clk
+@28
+led_panel_128_TB.uut.data_ctrl0.RGB0[2:0]
+led_panel_128_TB.uut.data_ctrl0.RGB1[2:0]
+@24
+led_panel_128_TB.uut.data_ctrl0.bit_cnt[5:0]
+@28
+led_panel_128_TB.uut.data_ctrl0.clk
+led_panel_128_TB.uut.data_ctrl0.config1
+led_panel_128_TB.uut.data_ctrl0.config2
+led_panel_128_TB.uut.data_ctrl0.config3
+led_panel_128_TB.uut.data_ctrl0.config4
+led_panel_128_TB.uut.data_ctrl0.config5
+@24
+led_panel_128_TB.uut.data_ctrl0.config_register[2:0]
+@c00022
+led_panel_128_TB.uut.data_ctrl0.config_rep[3:0]
+@28
+(0)led_panel_128_TB.uut.data_ctrl0.config_rep[3:0]
+(1)led_panel_128_TB.uut.data_ctrl0.config_rep[3:0]
+(2)led_panel_128_TB.uut.data_ctrl0.config_rep[3:0]
+(3)led_panel_128_TB.uut.data_ctrl0.config_rep[3:0]
+@1401200
+-group_end
+@28
+led_panel_128_TB.uut.data_ctrl0.config_sended
+@22
+led_panel_128_TB.uut.data_ctrl0.data_B0[15:0]
+led_panel_128_TB.uut.data_ctrl0.data_B1[15:0]
+led_panel_128_TB.uut.data_ctrl0.data_G0[15:0]
+led_panel_128_TB.uut.data_ctrl0.data_G1[15:0]
+led_panel_128_TB.uut.data_ctrl0.data_R0[15:0]
+led_panel_128_TB.uut.data_ctrl0.data_R1[15:0]
+@28
+led_panel_128_TB.uut.data_ctrl0.done
+led_panel_128_TB.uut.data_ctrl0.dt_ld
+led_panel_128_TB.uut.data_ctrl0.flag_for_edge
+led_panel_128_TB.uut.data_ctrl0.frame_done
+led_panel_128_TB.uut.data_ctrl0.in_data_B0[15:0]
+@22
+led_panel_128_TB.uut.data_ctrl0.in_data_B1[15:0]
+led_panel_128_TB.uut.data_ctrl0.in_data_G0[15:0]
+led_panel_128_TB.uut.data_ctrl0.in_data_G1[15:0]
+led_panel_128_TB.uut.data_ctrl0.in_data_R0[15:0]
+led_panel_128_TB.uut.data_ctrl0.in_data_R1[15:0]
+@28
+led_panel_128_TB.uut.data_ctrl0.ld_cnfg
+@420
+led_panel_128_TB.uut.data_ctrl0.number_of_bits
+@22
+led_panel_128_TB.uut.data_ctrl0.pack_cnt[15:0]
+@28
+led_panel_128_TB.uut.data_ctrl0.rst
+led_panel_128_TB.uut.data_ctrl0.sd_cnfg
+led_panel_128_TB.uut.data_ctrl0.send_done
+@820
+led_panel_128_TB.uut.data_ctrl0.substate_name[320:1]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,1454 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33+6 (git sha1 41b34a193, x86_64-conda-linux-gnu-cc 11.2.0 -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -fdebug-prefix-map=/root/conda-eda/conda-eda/workdir/conda-env/conda-bld/yosys_1694128612374/work=/usr/local/src/conda/yosys-0.33_7_g41b34a193 -fdebug-prefix-map=/home/leonardo/miniconda3/envs/digital=/usr/local/src/conda-prefix -fPIC -Os -fno-merge-constants)
+
+
+-- Running command ` read_verilog addrCtrl.v;  synth_ice40  -top addrCtrl; write_verilog addrCtrl_synth.v' --
+
+1. Executing Verilog-2005 frontend: addrCtrl.v
+Parsing Verilog input from `addrCtrl.v' to AST representation.
+Generating RTLIL representation for module `\addrCtrl'.
+Generating RTLIL representation for module `\DC'.
+Generating RTLIL representation for module `\addr'.
+Generating RTLIL representation for module `\control_addr'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH_ICE40 pass.
+
+2.1. Executing Verilog-2005 frontend: /home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+2.2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \addrCtrl
+Used module:     \control_addr
+Used module:     \addr
+Used module:     \DC
+Parameter \slowing_factor = 30
+
+2.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\control_addr'.
+Parameter \slowing_factor = 30
+Generating RTLIL representation for module `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110'.
+
+2.2.3. Analyzing design hierarchy..
+Top module:  \addrCtrl
+Used module:     $paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110
+Used module:     \addr
+Used module:     \DC
+
+2.2.4. Analyzing design hierarchy..
+Top module:  \addrCtrl
+Used module:     $paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110
+Used module:     \addr
+Used module:     \DC
+Removing unused module `\control_addr'.
+Removed 1 unused modules.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1414$268 in module SB_DFFNES.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1353$261 in module SB_DFFNESS.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1273$257 in module SB_DFFNER.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1212$250 in module SB_DFFNESR.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1138$247 in module SB_DFFNS.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1088$244 in module SB_DFFNSS.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1017$241 in module SB_DFFNR.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:967$238 in module SB_DFFNSR.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:803$230 in module SB_DFFES.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:742$223 in module SB_DFFESS.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:662$219 in module SB_DFFER.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:601$212 in module SB_DFFESR.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:527$209 in module SB_DFFS.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:477$206 in module SB_DFFSS.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:406$203 in module SB_DFFR.
+Marked 1 switch rules as full_case in process $proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:356$200 in module SB_DFFSR.
+Removed 1 dead cases from process $proc$addrCtrl.v:235$412 in module $paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.
+Marked 1 switch rules as full_case in process $proc$addrCtrl.v:235$412 in module $paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.
+Removed 1 dead cases from process $proc$addrCtrl.v:190$408 in module $paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.
+Marked 8 switch rules as full_case in process $proc$addrCtrl.v:190$408 in module $paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.
+Marked 3 switch rules as full_case in process $proc$addrCtrl.v:143$14 in module addr.
+Marked 4 switch rules as full_case in process $proc$addrCtrl.v:84$1 in module DC.
+Removed a total of 2 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 11 redundant assignments.
+Promoted 29 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFNES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$271'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$267'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$260'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$256'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$249'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$246'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$243'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$240'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$237'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFN.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$235'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$233'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$229'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$222'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$218'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$211'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$208'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$205'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$202'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$199'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFF.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$197'.
+  Set init value: \Q = 1'0
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \S in `\SB_DFFNES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1414$268'.
+Found async reset \R in `\SB_DFFNER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1273$257'.
+Found async reset \S in `\SB_DFFNS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1138$247'.
+Found async reset \R in `\SB_DFFNR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1017$241'.
+Found async reset \S in `\SB_DFFES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:803$230'.
+Found async reset \R in `\SB_DFFER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:662$219'.
+Found async reset \S in `\SB_DFFS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:527$209'.
+Found async reset \R in `\SB_DFFR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:406$203'.
+Found async reset \reset in `\DC.$proc$addrCtrl.v:84$1'.
+
+2.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+2.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFNES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$271'.
+Creating decoders for process `\SB_DFFNES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1414$268'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$267'.
+Creating decoders for process `\SB_DFFNESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1353$261'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$260'.
+Creating decoders for process `\SB_DFFNER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1273$257'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$256'.
+Creating decoders for process `\SB_DFFNESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1212$250'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$249'.
+Creating decoders for process `\SB_DFFNS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1138$247'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$246'.
+Creating decoders for process `\SB_DFFNSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1088$244'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$243'.
+Creating decoders for process `\SB_DFFNR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1017$241'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$240'.
+Creating decoders for process `\SB_DFFNSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:967$238'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$237'.
+Creating decoders for process `\SB_DFFNE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:922$236'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFN.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$235'.
+Creating decoders for process `\SB_DFFN.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:882$234'.
+Creating decoders for process `\SB_DFFES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$233'.
+Creating decoders for process `\SB_DFFES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:803$230'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$229'.
+Creating decoders for process `\SB_DFFESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:742$223'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$222'.
+Creating decoders for process `\SB_DFFER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:662$219'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$218'.
+Creating decoders for process `\SB_DFFESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:601$212'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$211'.
+Creating decoders for process `\SB_DFFS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:527$209'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$208'.
+Creating decoders for process `\SB_DFFSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:477$206'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$205'.
+Creating decoders for process `\SB_DFFR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:406$203'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$202'.
+Creating decoders for process `\SB_DFFSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:356$200'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$199'.
+Creating decoders for process `\SB_DFFE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:311$198'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFF.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$197'.
+Creating decoders for process `\SB_DFF.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:271$196'.
+Creating decoders for process `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:235$412'.
+     1/4: $1\sd[0:0]
+     2/4: $1\ld[0:0]
+     3/4: $1\sh[0:0]
+     4/4: $1\dn[0:0]
+Creating decoders for process `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:190$408'.
+     1/7: $5\delay_cnt[28:0]
+     2/7: $4\delay_cnt[28:0]
+     3/7: $3\delay_cnt[28:0]
+     4/7: $2\state[2:0]
+     5/7: $2\delay_cnt[28:0]
+     6/7: $1\delay_cnt[28:0]
+     7/7: $1\state[2:0]
+Creating decoders for process `\addr.$proc$addrCtrl.v:160$18'.
+Creating decoders for process `\addr.$proc$addrCtrl.v:143$14'.
+     1/2: $0\pointerResets[4:0]
+     2/2: $0\address[11:0]
+Creating decoders for process `\DC.$proc$addrCtrl.v:84$1'.
+     1/3: $0\SPI_init[0:0]
+     2/3: $0\displayCS[0:0]
+     3/3: $0\DC[0:0]
+
+2.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.\sd' from process `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:235$412'.
+No latch inferred for signal `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.\dn' from process `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:235$412'.
+No latch inferred for signal `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.\sh' from process `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:235$412'.
+No latch inferred for signal `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.\ld' from process `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:235$412'.
+No latch inferred for signal `\addr.\delay' from process `\addr.$proc$addrCtrl.v:160$18'.
+
+2.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1414$268'.
+  created $adff cell `$procdff$610' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1353$261'.
+  created $dff cell `$procdff$611' with negative edge clock.
+Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1273$257'.
+  created $adff cell `$procdff$612' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1212$250'.
+  created $dff cell `$procdff$613' with negative edge clock.
+Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1138$247'.
+  created $adff cell `$procdff$614' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1088$244'.
+  created $dff cell `$procdff$615' with negative edge clock.
+Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1017$241'.
+  created $adff cell `$procdff$616' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:967$238'.
+  created $dff cell `$procdff$617' with negative edge clock.
+Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:922$236'.
+  created $dff cell `$procdff$618' with negative edge clock.
+Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:882$234'.
+  created $dff cell `$procdff$619' with negative edge clock.
+Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:803$230'.
+  created $adff cell `$procdff$620' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:742$223'.
+  created $dff cell `$procdff$621' with positive edge clock.
+Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:662$219'.
+  created $adff cell `$procdff$622' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:601$212'.
+  created $dff cell `$procdff$623' with positive edge clock.
+Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:527$209'.
+  created $adff cell `$procdff$624' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:477$206'.
+  created $dff cell `$procdff$625' with positive edge clock.
+Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:406$203'.
+  created $adff cell `$procdff$626' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:356$200'.
+  created $dff cell `$procdff$627' with positive edge clock.
+Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:311$198'.
+  created $dff cell `$procdff$628' with positive edge clock.
+Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:271$196'.
+  created $dff cell `$procdff$629' with positive edge clock.
+Creating register for signal `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.\state' using process `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:190$408'.
+  created $dff cell `$procdff$630' with positive edge clock.
+Creating register for signal `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.\delay_cnt' using process `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:190$408'.
+  created $dff cell `$procdff$631' with positive edge clock.
+Creating register for signal `\addr.\address' using process `\addr.$proc$addrCtrl.v:143$14'.
+  created $dff cell `$procdff$632' with negative edge clock.
+Creating register for signal `\addr.\pointerResets' using process `\addr.$proc$addrCtrl.v:143$14'.
+  created $dff cell `$procdff$633' with negative edge clock.
+Creating register for signal `\DC.\DC' using process `\DC.$proc$addrCtrl.v:84$1'.
+  created $adff cell `$procdff$634' with negative edge clock and positive level reset.
+Creating register for signal `\DC.\displayCS' using process `\DC.$proc$addrCtrl.v:84$1'.
+  created $adff cell `$procdff$635' with negative edge clock and positive level reset.
+Creating register for signal `\DC.\SPI_init' using process `\DC.$proc$addrCtrl.v:84$1'.
+  created $adff cell `$procdff$636' with negative edge clock and positive level reset.
+
+2.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFNES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$271'.
+Found and cleaned up 1 empty switch in `\SB_DFFNES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1414$268'.
+Removing empty process `SB_DFFNES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1414$268'.
+Removing empty process `SB_DFFNESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$267'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1353$261'.
+Removing empty process `SB_DFFNESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1353$261'.
+Removing empty process `SB_DFFNER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$260'.
+Found and cleaned up 1 empty switch in `\SB_DFFNER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1273$257'.
+Removing empty process `SB_DFFNER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1273$257'.
+Removing empty process `SB_DFFNESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$256'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1212$250'.
+Removing empty process `SB_DFFNESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1212$250'.
+Removing empty process `SB_DFFNS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$249'.
+Removing empty process `SB_DFFNS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1138$247'.
+Removing empty process `SB_DFFNSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$246'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1088$244'.
+Removing empty process `SB_DFFNSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1088$244'.
+Removing empty process `SB_DFFNR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$243'.
+Removing empty process `SB_DFFNR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:1017$241'.
+Removing empty process `SB_DFFNSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$240'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:967$238'.
+Removing empty process `SB_DFFNSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:967$238'.
+Removing empty process `SB_DFFNE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$237'.
+Found and cleaned up 1 empty switch in `\SB_DFFNE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:922$236'.
+Removing empty process `SB_DFFNE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:922$236'.
+Removing empty process `SB_DFFN.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$235'.
+Removing empty process `SB_DFFN.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:882$234'.
+Removing empty process `SB_DFFES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$233'.
+Found and cleaned up 1 empty switch in `\SB_DFFES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:803$230'.
+Removing empty process `SB_DFFES.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:803$230'.
+Removing empty process `SB_DFFESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$229'.
+Found and cleaned up 2 empty switches in `\SB_DFFESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:742$223'.
+Removing empty process `SB_DFFESS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:742$223'.
+Removing empty process `SB_DFFER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$222'.
+Found and cleaned up 1 empty switch in `\SB_DFFER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:662$219'.
+Removing empty process `SB_DFFER.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:662$219'.
+Removing empty process `SB_DFFESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$218'.
+Found and cleaned up 2 empty switches in `\SB_DFFESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:601$212'.
+Removing empty process `SB_DFFESR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:601$212'.
+Removing empty process `SB_DFFS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$211'.
+Removing empty process `SB_DFFS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:527$209'.
+Removing empty process `SB_DFFSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$208'.
+Found and cleaned up 1 empty switch in `\SB_DFFSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:477$206'.
+Removing empty process `SB_DFFSS.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:477$206'.
+Removing empty process `SB_DFFR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$205'.
+Removing empty process `SB_DFFR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:406$203'.
+Removing empty process `SB_DFFSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$202'.
+Found and cleaned up 1 empty switch in `\SB_DFFSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:356$200'.
+Removing empty process `SB_DFFSR.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:356$200'.
+Removing empty process `SB_DFFE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$199'.
+Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:311$198'.
+Removing empty process `SB_DFFE.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:311$198'.
+Removing empty process `SB_DFF.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:0$197'.
+Removing empty process `SB_DFF.$proc$/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_sim.v:271$196'.
+Found and cleaned up 1 empty switch in `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:235$412'.
+Removing empty process `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:235$412'.
+Found and cleaned up 9 empty switches in `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:190$408'.
+Removing empty process `$paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.$proc$addrCtrl.v:190$408'.
+Removing empty process `addr.$proc$addrCtrl.v:160$18'.
+Found and cleaned up 4 empty switches in `\addr.$proc$addrCtrl.v:143$14'.
+Removing empty process `addr.$proc$addrCtrl.v:143$14'.
+Found and cleaned up 3 empty switches in `\DC.$proc$addrCtrl.v:84$1'.
+Removing empty process `DC.$proc$addrCtrl.v:84$1'.
+Cleaned up 35 empty switches.
+
+2.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.
+Optimizing module addr.
+Optimizing module DC.
+Optimizing module addrCtrl.
+
+2.4. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod\control_addr\slowing_factor=s32'00000000000000000000000000011110.
+Deleting now unused module addr.
+Deleting now unused module DC.
+
+2.5. Executing TRIBUF pass.
+
+2.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+2.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 0 unused cells and 60 unused wires.
+
+2.9. Executing CHECK pass (checking for obvious problems).
+Checking module addrCtrl...
+Found and reported 0 problems.
+
+2.10. Executing OPT pass (performing simple optimizations).
+
+2.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 18 cells.
+
+2.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \addrCtrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $flatten\control_addr0.$procmux$487.
+    dead port 2/2 on $mux $flatten\control_addr0.$procmux$489.
+    dead port 2/2 on $mux $flatten\control_addr0.$procmux$491.
+    dead port 1/2 on $mux $flatten\control_addr0.$procmux$494.
+    dead port 2/2 on $mux $flatten\control_addr0.$procmux$503.
+    dead port 2/2 on $mux $flatten\control_addr0.$procmux$505.
+    dead port 1/2 on $mux $flatten\control_addr0.$procmux$508.
+    dead port 2/2 on $mux $flatten\control_addr0.$procmux$516.
+    dead port 1/2 on $mux $flatten\control_addr0.$procmux$519.
+    dead port 1/2 on $mux $flatten\control_addr0.$procmux$548.
+    dead port 1/2 on $mux $flatten\control_addr0.$procmux$563.
+Removed 11 multiplexer ports.
+
+2.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \addrCtrl.
+    New ctrl vector for $pmux cell $flatten\control_addr0.$procmux$458: $auto$opt_reduce.cc:134:opt_pmux$638
+    New ctrl vector for $pmux cell $flatten\control_addr0.$procmux$521: { $flatten\control_addr0.$procmux$478_CMP $flatten\control_addr0.$procmux$461_CMP $flatten\control_addr0.$procmux$492_CMP $auto$opt_reduce.cc:134:opt_pmux$642 $flatten\control_addr0.$procmux$531_CMP $auto$opt_reduce.cc:134:opt_pmux$640 }
+    New ctrl vector for $pmux cell $flatten\control_addr0.$procmux$550: { $flatten\control_addr0.$procmux$492_CMP $flatten\control_addr0.$procmux$531_CMP $auto$opt_reduce.cc:134:opt_pmux$644 }
+  Optimizing cells in module \addrCtrl.
+Performed a total of 3 changes.
+
+2.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 0 unused cells and 29 unused wires.
+
+2.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \addrCtrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \addrCtrl.
+Performed a total of 0 changes.
+
+2.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.10.16. Finished OPT passes. (There is nothing left to do.)
+
+2.11. Executing FSM pass (extract and optimize FSM).
+
+2.11.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register addrCtrl.control_addr0.state.
+
+2.11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\control_addr0.state' from module `\addrCtrl'.
+  found $dff cell for state register: $flatten\control_addr0.$procdff$630
+  root of input selection tree: $flatten\control_addr0.$0\state[2:0]
+  found reset state: 3'110 (guessed from mux tree)
+  found ctrl input: \reset
+  found ctrl input: $auto$opt_reduce.cc:134:opt_pmux$640
+  found ctrl input: $flatten\control_addr0.$procmux$531_CMP
+  found ctrl input: $auto$opt_reduce.cc:134:opt_pmux$642
+  found ctrl input: $flatten\control_addr0.$procmux$492_CMP
+  found ctrl input: $flatten\control_addr0.$procmux$461_CMP
+  found ctrl input: $flatten\control_addr0.$procmux$478_CMP
+  found state code: 3'010
+  found ctrl input: $flatten\control_addr0.$procmux$530_CMP
+  found ctrl input: \spiDone
+  found ctrl input: \frst_done
+  found state code: 3'111
+  found state code: 3'100
+  found ctrl input: $flatten\control_addr0.$logic_or$addrCtrl.v:208$409_Y
+  found ctrl input: \addr0.frameFinished
+  found state code: 3'101
+  found state code: 3'000
+  found state code: 3'011
+  found ctrl input: \init
+  found state code: 3'001
+  found state code: 3'110
+  found ctrl output: $flatten\control_addr0.$procmux$531_CMP
+  found ctrl output: $flatten\control_addr0.$procmux$522_CMP
+  found ctrl output: $flatten\control_addr0.$procmux$492_CMP
+  found ctrl output: $flatten\control_addr0.$procmux$478_CMP
+  found ctrl output: $flatten\control_addr0.$procmux$467_CMP
+  found ctrl output: $flatten\control_addr0.$procmux$461_CMP
+  found ctrl output: $flatten\control_addr0.$procmux$460_CMP
+  found ctrl output: $flatten\control_addr0.$procmux$459_CMP
+  ctrl inputs: { $auto$opt_reduce.cc:134:opt_pmux$642 $auto$opt_reduce.cc:134:opt_pmux$640 $flatten\control_addr0.$logic_or$addrCtrl.v:208$409_Y $flatten\control_addr0.$procmux$530_CMP \addr0.frameFinished \frst_done \spiDone \reset \init }
+  ctrl outputs: { $flatten\control_addr0.$0\state[2:0] $flatten\control_addr0.$procmux$459_CMP $flatten\control_addr0.$procmux$460_CMP $flatten\control_addr0.$procmux$461_CMP $flatten\control_addr0.$procmux$467_CMP $flatten\control_addr0.$procmux$478_CMP $flatten\control_addr0.$procmux$492_CMP $flatten\control_addr0.$procmux$522_CMP $flatten\control_addr0.$procmux$531_CMP }
+  transition:      3'000 9'-------00 ->      3'010 11'01000001000
+  transition:      3'000 9'-------01 ->      3'001 11'00100001000
+  transition:      3'000 9'-------1- ->      3'110 11'11000001000
+  transition:      3'100 9'--0----0- ->      3'100 11'10000000100
+  transition:      3'100 9'--1-0--0- ->      3'101 11'10100000100
+  transition:      3'100 9'--1-1--0- ->      3'000 11'00000000100
+  transition:      3'100 9'-------1- ->      3'110 11'11000000100
+  transition:      3'010 9'-------0- ->      3'011 11'01100100000
+  transition:      3'010 9'-------1- ->      3'110 11'11000100000
+  transition:      3'110 9'0------0- ->      3'010 11'01000000010
+  transition:      3'110 9'-------1- ->      3'110 11'11000000010
+  transition:      3'001 9'0------0- ->      3'010 11'01000010000
+  transition:      3'001 9'-------1- ->      3'110 11'11000010000
+  transition:      3'101 9'---0-000- ->      3'101 11'10100000001
+  transition:      3'101 9'---0-100- ->      3'111 11'11100000001
+  transition:      3'101 9'---0--10- ->      3'010 11'01000000001
+  transition:      3'101 9'---1---0- ->      3'101 11'10100000001
+  transition:      3'101 9'-------1- ->      3'110 11'11000000001
+  transition:      3'011 9'-------0- ->      3'100 11'10001000000
+  transition:      3'011 9'-------1- ->      3'110 11'11001000000
+  transition:      3'111 9'-------0- ->      3'100 11'10010000000
+  transition:      3'111 9'-------1- ->      3'110 11'11010000000
+
+2.11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\control_addr0.state$645' from module `\addrCtrl'.
+  Removing unused input signal $auto$opt_reduce.cc:134:opt_pmux$640.
+
+2.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 18 unused cells and 18 unused wires.
+
+2.11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\control_addr0.state$645' from module `\addrCtrl'.
+  Removing unused output signal $flatten\control_addr0.$0\state[2:0] [0].
+  Removing unused output signal $flatten\control_addr0.$0\state[2:0] [1].
+  Removing unused output signal $flatten\control_addr0.$0\state[2:0] [2].
+
+2.11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\control_addr0.state$645' from module `\addrCtrl' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  000 -> ------1-
+  100 -> -----1--
+  010 -> ----1---
+  110 -> -------1
+  001 -> ---1----
+  101 -> --1-----
+  011 -> -1------
+  111 -> 1-------
+
+2.11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\control_addr0.state$645' from module `addrCtrl':
+-------------------------------------
+
+  Information on FSM $fsm$\control_addr0.state$645 (\control_addr0.state):
+
+  Number of input signals:    8
+  Number of output signals:   8
+  Number of state bits:       8
+
+  Input signals:
+    0: \init
+    1: \reset
+    2: \spiDone
+    3: \frst_done
+    4: \addr0.frameFinished
+    5: $flatten\control_addr0.$procmux$530_CMP
+    6: $flatten\control_addr0.$logic_or$addrCtrl.v:208$409_Y
+    7: $auto$opt_reduce.cc:134:opt_pmux$642
+
+  Output signals:
+    0: $flatten\control_addr0.$procmux$531_CMP
+    1: $flatten\control_addr0.$procmux$522_CMP
+    2: $flatten\control_addr0.$procmux$492_CMP
+    3: $flatten\control_addr0.$procmux$478_CMP
+    4: $flatten\control_addr0.$procmux$467_CMP
+    5: $flatten\control_addr0.$procmux$461_CMP
+    6: $flatten\control_addr0.$procmux$460_CMP
+    7: $flatten\control_addr0.$procmux$459_CMP
+
+  State encoding:
+    0: 8'------1-
+    1: 8'-----1--
+    2: 8'----1---
+    3: 8'-------1  <RESET STATE>
+    4: 8'---1----
+    5: 8'--1-----
+    6: 8'-1------
+    7: 8'1-------
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 8'------00   ->     2 8'00001000
+      1:     0 8'------1-   ->     3 8'00001000
+      2:     0 8'------01   ->     4 8'00001000
+      3:     1 8'-1-1--0-   ->     0 8'00000100
+      4:     1 8'-0----0-   ->     1 8'00000100
+      5:     1 8'------1-   ->     3 8'00000100
+      6:     1 8'-1-0--0-   ->     5 8'00000100
+      7:     2 8'------1-   ->     3 8'00100000
+      8:     2 8'------0-   ->     6 8'00100000
+      9:     3 8'0-----0-   ->     2 8'00000010
+     10:     3 8'------1-   ->     3 8'00000010
+     11:     4 8'0-----0-   ->     2 8'00010000
+     12:     4 8'------1-   ->     3 8'00010000
+     13:     5 8'--0--10-   ->     2 8'00000001
+     14:     5 8'------1-   ->     3 8'00000001
+     15:     5 8'--0-000-   ->     5 8'00000001
+     16:     5 8'--1---0-   ->     5 8'00000001
+     17:     5 8'--0-100-   ->     7 8'00000001
+     18:     6 8'------0-   ->     1 8'01000000
+     19:     6 8'------1-   ->     3 8'01000000
+     20:     7 8'------0-   ->     1 8'10000000
+     21:     7 8'------1-   ->     3 8'10000000
+
+-------------------------------------
+
+2.11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\control_addr0.state$645' from module `\addrCtrl'.
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 2 cells.
+
+2.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \addrCtrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \addrCtrl.
+Performed a total of 0 changes.
+
+2.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $flatten\control_addr0.$procdff$631 ($dff) from module addrCtrl (D = $flatten\control_addr0.$2\delay_cnt[28:0], Q = \control_addr0.delay_cnt, rval = 29'00000000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$716 ($sdff) from module addrCtrl (D = $flatten\control_addr0.$2\delay_cnt[28:0], Q = \control_addr0.delay_cnt).
+Adding SRST signal on $flatten\addr0.$procdff$633 ($dff) from module addrCtrl (D = $flatten\addr0.$procmux$574_Y, Q = \addr0.pointerResets, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:266:slice$728 ($sdff) from module addrCtrl (D = $flatten\addr0.$add$addrCtrl.v:155$17_Y [4:0], Q = \addr0.pointerResets).
+Adding SRST signal on $flatten\addr0.$procdff$632 ($dff) from module addrCtrl (D = { $flatten\addr0.$procmux$588_Y [5] $flatten\addr0.$procmux$588_Y [3] $flatten\addr0.$procmux$588_Y [1:0] }, Q = { \addr0.address [5] \addr0.address [3] \addr0.address [1:0] }, rval = 4'0000).
+Adding SRST signal on $flatten\addr0.$procdff$632 ($dff) from module addrCtrl (D = { $flatten\addr0.$procmux$585_Y [11:6] $flatten\addr0.$procmux$585_Y [4] $flatten\addr0.$procmux$585_Y [2] }, Q = { \addr0.address [11:6] \addr0.address [4] \addr0.address [2] }, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$737 ($sdff) from module addrCtrl (D = { $flatten\addr0.$procmux$583_Y [11:6] $flatten\addr0.$procmux$583_Y [4] $flatten\addr0.$procmux$583_Y [2] }, Q = { \addr0.address [11:6] \addr0.address [4] \addr0.address [2] }).
+Adding EN signal on $auto$ff.cc:266:slice$736 ($sdff) from module addrCtrl (D = { $flatten\addr0.$procmux$588_Y [5] $flatten\addr0.$procmux$588_Y [3] $flatten\addr0.$procmux$588_Y [1:0] }, Q = { \addr0.address [5] \addr0.address [3] \addr0.address [1:0] }).
+Adding EN signal on $flatten\DC0.$procdff$635 ($adff) from module addrCtrl (D = $flatten\DC0.$0\displayCS[0:0], Q = \DC0.displayCS).
+Adding EN signal on $flatten\DC0.$procdff$634 ($adff) from module addrCtrl (D = $flatten\DC0.$procmux$606_Y, Q = \DC0.DC).
+
+2.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 7 unused cells and 21 unused wires.
+
+2.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \addrCtrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \addrCtrl.
+    New ctrl vector for $pmux cell $flatten\control_addr0.$procmux$550: { \control_addr0.state [2] \control_addr0.state [5] }
+  Optimizing cells in module \addrCtrl.
+Performed a total of 1 changes.
+
+2.12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 1 cells.
+
+2.12.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 0 unused cells and 1 unused wires.
+
+2.12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.12.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.12.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \addrCtrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.12.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \addrCtrl.
+Performed a total of 0 changes.
+
+2.12.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.12.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.12.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.12.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.12.23. Finished OPT passes. (There is nothing left to do.)
+
+2.13. Executing WREDUCE pass (reducing word size of cells).
+Removed top 6 bits (of 12) from mux cell addrCtrl.$flatten\addr0.$procmux$588 ($mux).
+Removed top 6 bits (of 12) from mux cell addrCtrl.$flatten\addr0.$procmux$585 ($mux).
+Removed top 31 bits (of 32) from mux cell addrCtrl.$flatten\addr0.$ternary$addrCtrl.v:161$22 ($mux).
+Removed top 6 bits (of 12) from port B of cell addrCtrl.$flatten\addr0.$eq$addrCtrl.v:161$20 ($eq).
+Removed top 10 bits (of 12) from port B of cell addrCtrl.$flatten\addr0.$eq$addrCtrl.v:161$19 ($eq).
+Removed top 31 bits (of 32) from port B of cell addrCtrl.$flatten\addr0.$add$addrCtrl.v:155$17 ($add).
+Removed top 27 bits (of 32) from port Y of cell addrCtrl.$flatten\addr0.$add$addrCtrl.v:155$17 ($add).
+Removed top 31 bits (of 32) from port B of cell addrCtrl.$flatten\addr0.$add$addrCtrl.v:153$16 ($add).
+Removed top 20 bits (of 32) from port Y of cell addrCtrl.$flatten\addr0.$add$addrCtrl.v:153$16 ($add).
+Removed top 20 bits (of 32) from port B of cell addrCtrl.$flatten\addr0.$lt$addrCtrl.v:153$15 ($lt).
+Removed top 31 bits (of 32) from mux cell addrCtrl.$flatten\addr0.$ternary$addrCtrl.v:141$13 ($mux).
+Removed top 20 bits (of 32) from port B of cell addrCtrl.$flatten\addr0.$gt$addrCtrl.v:141$11 ($gt).
+Removed top 26 bits (of 32) from port B of cell addrCtrl.$flatten\addr0.$lt$addrCtrl.v:141$9 ($lt).
+Removed top 31 bits (of 32) from mux cell addrCtrl.$flatten\addr0.$ternary$addrCtrl.v:140$7 ($mux).
+Removed top 1 bits (of 2) from port B of cell addrCtrl.$auto$fsm_map.cc:77:implement_pattern_cache$692 ($eq).
+Removed top 1 bits (of 4) from port B of cell addrCtrl.$auto$fsm_map.cc:77:implement_pattern_cache$713 ($eq).
+Removed top 1 bits (of 2) from port B of cell addrCtrl.$auto$opt_dff.cc:195:make_patterns_logic$723 ($ne).
+Removed top 1 bits (of 3) from port B of cell addrCtrl.$auto$fsm_map.cc:77:implement_pattern_cache$679 ($eq).
+Removed top 20 bits (of 29) from mux cell addrCtrl.$flatten\control_addr0.$procmux$484 ($mux).
+Removed top 31 bits (of 32) from port B of cell addrCtrl.$flatten\control_addr0.$sub$addrCtrl.v:222$411 ($sub).
+Removed top 3 bits (of 32) from port Y of cell addrCtrl.$flatten\control_addr0.$sub$addrCtrl.v:222$411 ($sub).
+Removed top 20 bits (of 32) from wire addrCtrl.$flatten\addr0.$add$addrCtrl.v:153$16_Y.
+Removed top 27 bits (of 32) from wire addrCtrl.$flatten\addr0.$add$addrCtrl.v:155$17_Y.
+Removed top 6 bits (of 12) from wire addrCtrl.$flatten\addr0.$procmux$585_Y.
+Removed top 6 bits (of 12) from wire addrCtrl.$flatten\addr0.$procmux$588_Y.
+Removed top 20 bits (of 29) from wire addrCtrl.$flatten\control_addr0.$5\delay_cnt[28:0].
+Removed top 4 bits (of 32) from wire addrCtrl.$flatten\control_addr0.$sub$addrCtrl.v:222$411_Y.
+
+2.14. Executing PEEPOPT pass (run peephole optimizers).
+
+2.15. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 0 unused cells and 9 unused wires.
+
+2.16. Executing SHARE pass (SAT-based resource sharing).
+
+2.17. Executing TECHMAP pass (map to technology primitives).
+
+2.17.1. Executing Verilog-2005 frontend: /home/leonardo/miniconda3/envs/digital/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+2.17.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+2.18. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.20. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module addrCtrl:
+  creating $macc model for $flatten\addr0.$add$addrCtrl.v:153$16 ($add).
+  creating $macc model for $flatten\addr0.$add$addrCtrl.v:155$17 ($add).
+  creating $macc model for $flatten\control_addr0.$sub$addrCtrl.v:222$411 ($sub).
+  creating $alu model for $macc $flatten\control_addr0.$sub$addrCtrl.v:222$411.
+  creating $alu model for $macc $flatten\addr0.$add$addrCtrl.v:155$17.
+  creating $alu model for $macc $flatten\addr0.$add$addrCtrl.v:153$16.
+  creating $alu model for $flatten\addr0.$gt$addrCtrl.v:141$11 ($gt): new $alu
+  creating $alu model for $flatten\addr0.$lt$addrCtrl.v:141$9 ($lt): new $alu
+  creating $alu model for $flatten\addr0.$lt$addrCtrl.v:153$15 ($lt): new $alu
+  creating $alu model for $flatten\addr0.$eq$addrCtrl.v:140$5 ($eq): merged with $flatten\addr0.$lt$addrCtrl.v:153$15.
+  creating $alu cell for $flatten\addr0.$lt$addrCtrl.v:153$15, $flatten\addr0.$eq$addrCtrl.v:140$5: $auto$alumacc.cc:485:replace_alu$758
+  creating $alu cell for $flatten\addr0.$lt$addrCtrl.v:141$9: $auto$alumacc.cc:485:replace_alu$765
+  creating $alu cell for $flatten\addr0.$gt$addrCtrl.v:141$11: $auto$alumacc.cc:485:replace_alu$776
+  creating $alu cell for $flatten\addr0.$add$addrCtrl.v:153$16: $auto$alumacc.cc:485:replace_alu$787
+  creating $alu cell for $flatten\addr0.$add$addrCtrl.v:155$17: $auto$alumacc.cc:485:replace_alu$790
+  creating $alu cell for $flatten\control_addr0.$sub$addrCtrl.v:222$411: $auto$alumacc.cc:485:replace_alu$793
+  created 6 $alu and 0 $macc cells.
+
+2.21. Executing OPT pass (performing simple optimizations).
+
+2.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \addrCtrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \addrCtrl.
+Performed a total of 0 changes.
+
+2.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 1 unused cells and 6 unused wires.
+
+2.21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.21.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.21.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \addrCtrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.21.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \addrCtrl.
+Performed a total of 0 changes.
+
+2.21.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.21.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.21.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.21.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.21.16. Finished OPT passes. (There is nothing left to do.)
+
+2.22. Executing MEMORY pass.
+
+2.22.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.22.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+2.22.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+2.22.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+2.22.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+2.22.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.22.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.22.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+2.22.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.22.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.24. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+2.25. Executing TECHMAP pass (map to technology primitives).
+
+2.25.1. Executing Verilog-2005 frontend: /home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_'.
+Successfully finished Verilog frontend.
+
+2.25.2. Executing Verilog-2005 frontend: /home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/spram_map.v
+Parsing Verilog input from `/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/spram_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_SPRAM_'.
+Successfully finished Verilog frontend.
+
+2.25.3. Continuing TECHMAP pass.
+No more expansions possible.
+
+2.26. Executing ICE40_BRAMINIT pass.
+
+2.27. Executing OPT pass (performing simple optimizations).
+
+2.27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.27.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 0 unused cells and 9 unused wires.
+
+2.27.5. Finished fast OPT passes.
+
+2.28. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+2.29. Executing OPT pass (performing simple optimizations).
+
+2.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \addrCtrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \addrCtrl.
+    Consolidated identical input bits for $mux cell $flatten\control_addr0.$procmux$484:
+      Old ports: A=9'000011110, B=9'100101100, Y=$auto$wreduce.cc:461:run$752 [8:0]
+      New ports: A=2'01, B=2'10, Y={ $auto$wreduce.cc:461:run$752 [5] $auto$wreduce.cc:461:run$752 [1] }
+      New connections: { $auto$wreduce.cc:461:run$752 [8:6] $auto$wreduce.cc:461:run$752 [4:2] $auto$wreduce.cc:461:run$752 [0] } = { $auto$wreduce.cc:461:run$752 [5] 2'00 $auto$wreduce.cc:461:run$752 [1] 3'110 }
+  Optimizing cells in module \addrCtrl.
+Performed a total of 1 changes.
+
+2.29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.29.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.29.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.29.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \addrCtrl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+
+2.29.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \addrCtrl.
+Performed a total of 0 changes.
+
+2.29.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.29.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.29.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.29.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.29.16. Finished OPT passes. (There is nothing left to do.)
+
+2.30. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+2.31. Executing TECHMAP pass (map to technology primitives).
+
+2.31.1. Executing Verilog-2005 frontend: /home/leonardo/miniconda3/envs/digital/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+2.31.2. Executing Verilog-2005 frontend: /home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+2.31.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$ee3d784672cdb1cb32d9a801a3af776716f16b74\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$b15d28721ac58edd44c77fb51c9f8c001a741924\_80_ice40_alu for cells of type $alu.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_80_ice40_alu for cells of type $alu.
+Using template $paramod$8f780356cb6cdb52f6a744190131b65634639c4e\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$b4f77559cc9a241738bc2a5f6c0923147e9a0644\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+
+2.32. Executing OPT pass (performing simple optimizations).
+
+2.32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 48 cells.
+
+2.32.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.32.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 37 unused cells and 185 unused wires.
+
+2.32.5. Finished fast OPT passes.
+
+2.33. Executing ICE40_OPT pass (performing simple optimizations).
+
+2.33.1. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) addrCtrl.$auto$alumacc.cc:485:replace_alu$758.slice[0].carry: CO=\addr0.address [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) addrCtrl.$auto$alumacc.cc:485:replace_alu$765.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$765.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) addrCtrl.$auto$alumacc.cc:485:replace_alu$776.slice[0].carry: CO=\addr0.address [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) addrCtrl.$auto$alumacc.cc:485:replace_alu$787.slice[0].carry: CO=\addr0.address [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) addrCtrl.$auto$alumacc.cc:485:replace_alu$790.slice[0].carry: CO=\addr0.pointerResets [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) addrCtrl.$auto$alumacc.cc:485:replace_alu$793.slice[0].carry: CO=\control_addr0.delay_cnt [0]
+
+2.33.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.33.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 1 cells.
+
+2.33.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.33.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 2 unused cells and 0 unused wires.
+
+2.33.6. Rerunning OPT passes. (Removed registers in this run.)
+
+2.33.7. Running ICE40 specific optimizations.
+
+2.33.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.33.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.33.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.33.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.33.12. Finished OPT passes. (There is nothing left to do.)
+
+2.34. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+2.35. Executing TECHMAP pass (map to technology primitives).
+
+2.35.1. Executing Verilog-2005 frontend: /home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+2.35.2. Continuing TECHMAP pass.
+Using template \$_DFF_NP0_ for cells of type $_DFF_NP0_.
+Using template \$_DFFE_NP0P_ for cells of type $_DFFE_NP0P_.
+Using template \$_SDFFCE_NP0P_ for cells of type $_SDFFCE_NP0P_.
+Using template \$_DFF_P_ for cells of type $_DFF_P_.
+Using template \$_SDFFCE_PP0P_ for cells of type $_SDFFCE_PP0P_.
+Using template \$_DFFE_NP1P_ for cells of type $_DFFE_NP1P_.
+No more expansions possible.
+
+2.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping addrCtrl.$auto$alumacc.cc:485:replace_alu$787.slice[0].carry ($lut).
+Mapping addrCtrl.$auto$alumacc.cc:485:replace_alu$790.slice[0].carry ($lut).
+Mapping addrCtrl.$auto$alumacc.cc:485:replace_alu$793.slice[0].carry ($lut).
+
+2.38. Executing ICE40_OPT pass (performing simple optimizations).
+
+2.38.1. Running ICE40 specific optimizations.
+
+2.38.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.38.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 44 cells.
+
+2.38.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.38.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+Removed 0 unused cells and 379 unused wires.
+
+2.38.6. Rerunning OPT passes. (Removed registers in this run.)
+
+2.38.7. Running ICE40 specific optimizations.
+
+2.38.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module addrCtrl.
+
+2.38.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\addrCtrl'.
+Removed a total of 0 cells.
+
+2.38.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.38.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \addrCtrl..
+
+2.38.12. Finished OPT passes. (There is nothing left to do.)
+
+2.39. Executing TECHMAP pass (map to technology primitives).
+
+2.39.1. Executing Verilog-2005 frontend: /home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+2.39.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+2.40. Executing ABC pass (technology mapping using ABC).
+
+2.40.1. Extracting gate netlist of module `\addrCtrl' to `<abc-temp-dir>/input.blif'..
+Extracted 229 gates and 332 wires to a netlist network with 101 inputs and 72 outputs.
+
+2.40.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + dress <abc-temp-dir>/input.blif 
+ABC: Total number of equiv classes                =      86.
+ABC: Participating nodes from both networks       =     181.
+ABC: Participating nodes from the first network   =      87. (  80.56 % of nodes)
+ABC: Participating nodes from the second network  =      94. (  87.04 % of nodes)
+ABC: Node pairs (any polarity)                    =      87. (  80.56 % of names can be moved)
+ABC: Node pairs (same polarity)                   =      83. (  76.85 % of names can be moved)
+ABC: Total runtime =     0.02 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+2.40.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:      107
+ABC RESULTS:        internal signals:      159
+ABC RESULTS:           input signals:      101
+ABC RESULTS:          output signals:       72
+Removing temp directory.
+
+2.41. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+2.42. Executing TECHMAP pass (map to technology primitives).
+
+2.42.1. Executing Verilog-2005 frontend: /home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+2.42.2. Continuing TECHMAP pass.
+No more expansions possible.
+Removed 36 unused cells and 245 unused wires.
+
+2.43. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:      149
+  1-LUT               14
+  2-LUT               46
+  3-LUT               55
+  4-LUT               34
+  with \SB_CARRY    (#0)   40
+  with \SB_CARRY    (#1)   41
+
+Eliminating LUTs.
+Number of LUTs:      149
+  1-LUT               14
+  2-LUT               46
+  3-LUT               55
+  4-LUT               34
+  with \SB_CARRY    (#0)   40
+  with \SB_CARRY    (#1)   41
+
+Combining LUTs.
+Number of LUTs:      117
+  1-LUT               14
+  2-LUT               12
+  3-LUT               27
+  4-LUT               64
+  with \SB_CARRY    (#0)   40
+  with \SB_CARRY    (#1)   41
+
+Eliminated 0 LUTs.
+Combined 32 LUTs.
+
+2.44. Executing TECHMAP pass (map to technology primitives).
+
+2.44.1. Executing Verilog-2005 frontend: /home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/home/leonardo/miniconda3/envs/digital/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+2.44.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110001 for cells of type $lut.
+Using template $paramod$cd6c4b4da6d8737b72fd2dc8f5d83d8967445809\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
+Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
+Using template $paramod$d4fae2c0d9ad2966369cd4e39b81c71bcd1327c9\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod$d81e419182194220fe1d6dd96690c56b1648ff58\$lut for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
+Using template $paramod$a3cdc1eb771a2c6a16f64da161e11100ac409d2b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11111110 for cells of type $lut.
+Using template $paramod$8c24dc0cdd336b7fb88bbf7eed45cec5cbae862b\$lut for cells of type $lut.
+Using template $paramod$a54d8b8d2c90a828ee71c2d82e7e1612992a7ab8\$lut for cells of type $lut.
+Using template $paramod$c24ed72ebb67e9ead6029e42e909ef7fc0abbb11\$lut for cells of type $lut.
+Using template $paramod$df0b68f8e63b2deb6710e23abd8b8ff0796d4897\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110100 for cells of type $lut.
+Using template $paramod$a59507d273cd827eb6c46c37820d50a1b717efdf\$lut for cells of type $lut.
+Using template $paramod$1b006f6294a954502e34ffd3347cb58c2cb14ad8\$lut for cells of type $lut.
+Using template $paramod$0de052767abdccc3aefc818722bdc3c7850d25d6\$lut for cells of type $lut.
+Using template $paramod$9850450c7f2ce6ec6d61697515f47872a7c4eee5\$lut for cells of type $lut.
+Using template $paramod$6e46ec5a196ba1a24b8e69ab094cadc07c13ac1f\$lut for cells of type $lut.
+Using template $paramod$d35161d1d7976dcc02e7c7d51172431be85143b4\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11111000 for cells of type $lut.
+Using template $paramod$94ac66a11090dca84889e55fcf03297912a5b7ec\$lut for cells of type $lut.
+No more expansions possible.
+Removed 0 unused cells and 251 unused wires.
+
+2.45. Executing AUTONAME pass.
+Renamed 3077 objects in module addrCtrl (27 iterations).
+
+2.46. Executing HIERARCHY pass (managing design hierarchy).
+
+2.46.1. Analyzing design hierarchy..
+Top module:  \addrCtrl
+
+2.46.2. Analyzing design hierarchy..
+Top module:  \addrCtrl
+Removed 0 unused modules.
+
+2.47. Printing statistics.
+
+=== addrCtrl ===
+
+   Number of wires:                138
+   Number of wire bits:            421
+   Number of public wires:         138
+   Number of public wire bits:     421
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                247
+     SB_CARRY                       73
+     SB_DFF                          8
+     SB_DFFESR                      29
+     SB_DFFNER                       1
+     SB_DFFNES                       1
+     SB_DFFNESR                     17
+     SB_DFFNR                        1
+     SB_LUT4                       117
+
+2.48. Executing CHECK pass (checking for obvious problems).
+Checking module addrCtrl...
+Found and reported 0 problems.
+
+3. Executing Verilog backend.
+
+3.1. Executing BMUXMAP pass.
+
+3.2. Executing DEMUXMAP pass.
+Dumping module `\addrCtrl'.
+
+End of script. Logfile hash: cc7c182e13, CPU: user 0.50s system 0.01s, MEM: 23.12 MB peak
+Yosys 0.33+6 (git sha1 41b34a193, x86_64-conda-linux-gnu-cc 11.2.0 -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -fdebug-prefix-map=/root/conda-eda/conda-eda/workdir/conda-env/conda-bld/yosys_1694128612374/work=/usr/local/src/conda/yosys-0.33_7_g41b34a193 -fdebug-prefix-map=/home/leonardo/miniconda3/envs/digital=/usr/local/src/conda-prefix -fPIC -Os -fno-merge-constants)
+Time spent: 48% 13x read_verilog (0 sec), 14% 1x abc (0 sec), ...
