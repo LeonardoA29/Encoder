@@ -90,13 +90,13 @@ module SOC (
    );
 
    wire [31:0] uart_dout;
-   wire [31:0] Teclado_dout;
-   wire [31:0] bdc2bin_dout;
-   wire [31:0] mult_dout;
-   wire [31:0] div_dout;
-   wire [31:0] root_dout;
-   wire [31:0] bin2bcd_dout;
-   wire [31:0] Led_dout;
+   wire [31:0] Encoder_dout;
+   // wire [31:0] bdc2bin_dout;
+   // wire [31:0] mult_dout;
+   // wire [31:0] div_dout;
+   // wire [31:0] root_dout;
+   // wire [31:0] bin2bcd_dout;
+   // wire [31:0] Led_dout;
 
 
   peripheral_uart #(
@@ -238,9 +238,15 @@ module SOC (
   
 */
 
-   Encoder Enc0 (
-    .clk(clk),
-    .reset(reset),
+   peripheral_Encoder Enc0 (
+   .clk(clk),
+   .reset(!resetn),
+   .d_in(mem_wdata[0]), 
+	.cs(cs[7]), 
+	.addr(mem_addr[4:0]), 
+	.rd(rd), 
+	.wr(wr), 
+	.d_out(Encoder_dout),
 
 
     .x_in_11(x_in_11), .x_in_10(x_in_10), .x_in_9(x_in_9), .x_in_8(x_in_8),
@@ -262,14 +268,14 @@ module SOC (
   always @*
   begin
       case (mem_addr[31:16])	// direcciones - chip_select
-        16'h0043: cs= 9'b100000000; //mult_out
-        16'h0041: cs= 9'b010000000;	//Teclado_out
-        16'h0042: cs= 9'b001000000;	//bcd2bin_out
+      //   16'h0043: cs= 9'b100000000; //mult_out
+        16'h0041: cs= 9'b010000000;	//Encoder_out
+      //   16'h0042: cs= 9'b001000000;	//bcd2bin_out
         16'h0040: cs= 9'b000100000;	//uart
-        16'h0044: cs= 9'b000010000;	//div_out
-        16'h0045: cs= 9'b000001000; //root_out
-        16'h0046: cs= 9'b000000100; //bin2bcd_out
-        16'h0047: cs= 9'b000000010; //Led_out
+      //   16'h0044: cs= 9'b000010000;	//div_out
+      //   16'h0045: cs= 9'b000001000; //root_out
+      //   16'h0046: cs= 9'b000000100; //bin2bcd_out
+      //   16'h0047: cs= 9'b000000010; //Led_out
         16'h0000: cs= 9'b000000001; //RAM   
         default:  cs= 9'b000000001;       
       endcase
@@ -278,14 +284,14 @@ module SOC (
   always @*
   begin
       case (cs)
-        9'b100000000: mem_rdata = mult_dout;
-        9'b010000000: mem_rdata = Teclado_dout;
-        9'b001000000: mem_rdata = bdc2bin_dout;
+      //   9'b100000000: mem_rdata = mult_dout;
+        9'b010000000: mem_rdata = Encoder_dout;
+      //   9'b001000000: mem_rdata = bdc2bin_dout;
         9'b000100000: mem_rdata = uart_dout;
-        9'b000010000: mem_rdata = div_dout;
-        9'b000001000: mem_rdata = root_dout;
-        9'b000000100: mem_rdata = bin2bcd_dout;
-        9'b000000010: mem_rdata = Led_dout;
+      //   9'b000010000: mem_rdata = div_dout;
+      //   9'b000001000: mem_rdata = root_dout;
+      //   9'b000000100: mem_rdata = bin2bcd_dout;
+      //   9'b000000010: mem_rdata = Led_dout;
         9'b000000001: mem_rdata = RAM_rdata;
       endcase
   end

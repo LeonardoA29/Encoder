@@ -30,8 +30,9 @@ always @(posedge clk or posedge reset) begin
 
         case (state)
             START: begin
-                if (init_ff2)
-                    state <= SAMPLE;
+                if (init_ff2) state <= SAMPLE;
+                else ;
+                
             end
 
             SAMPLE: begin
