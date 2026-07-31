@@ -8,13 +8,9 @@
 # a:
 # COMMONFLAGS += -flto
 # *************************************************
-OBJECTS=MiCalculdora_tcl.o global_tcl.o global_mult.o global_div.o global_DD.o global_print.o global_rev_DD.o global_root.o global_LED.o putchar.o getchar.o wait.o#cambiar por todas las unidades .o del proyecto
-OBJS=MiCalculdora_tcl.o #cambiar por todas las unidades .o del proyecto
 
-
-#OBJS    = bcd2bin.o # cambiar por el main del proyecto
-#OBJECTS = bcd2bin.o
-
+OBJECTS = main.o print_decimal.o putchar.o
+OBJS    = main.o
 
 CROSS   = riscv32-unknown-elf
 CC      = $(CROSS)-gcc
@@ -22,9 +18,12 @@ AS      = $(CROSS)-as
 LD      = $(CROSS)-ld
 OBJCOPY = $(CROSS)-objcopy
 OBJDUMP = $(CROSS)-objdump
-AFLAGS  = -march=rv32i -mabi=ilp32
 
-all:firmware.hex 
+# Banderas estrictas para arquitectura de 32-bit sin FPU (soft-float)
+AFLAGS  = -march=rv32i -mabi=ilp32
+CFLAGS  = -march=rv32i -mabi=ilp32
+
+all: firmware.hex 
 
 firmware.bin: firmware.elf
 	$(OBJCOPY) -O verilog $< firmware_flash.hex
@@ -33,39 +32,44 @@ firmware.bin: firmware.elf
 	chmod -x $@
 
 firmware.elf: $(OBJECTS) bram.ld
-	$(LD) $(LDFLAGS) -T bram.ld  -m elf32lriscv -nostdlib -Map firmware.map -N -o $@ $(OBJECTS)
+	$(LD) $(LDFLAGS) -T bram.ld -m elf32lriscv -nostdlib -Map firmware.map -N -o $@ $(OBJECTS)
 	chmod -x $@
 	
 firmware.hex: firmware.elf firmware.lst firmware.bin
-	../firmware_words_src/firmware_words firmware.elf -ram 16384 -max_addr 16384  -out firmware.hex
+	../firmware_words_src/firmware_words firmware.elf -ram 16384 -max_addr 16384 -out firmware.hex
 	cp firmware.hex ../../rtl
 	cp firmware_flash.hex ../../rtl
 
 firmware.lst: firmware.elf
 	$(OBJDUMP) -h -S $< > $@
 
+# Regla para archivos C
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< 
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Reglas para archivos ensamblador (.S en mayúscula y .s en minúscula)
 %.o: %.S
-	$(AS) $(AFLAGS) -c $< -o $@
+	$(AS) $(AFLAGS) $< -o $@
+
+%.o: %.s
+	$(AS) $(AFLAGS) $< -o $@
+
 clean:
-	rm -rf  $(OBJECTS) *.elf *.bin .*~ *~ *.map *.d *.hex *.o *.lst
+	rm -rf $(OBJECTS) *.elf *.bin .*~ *~ *.map *.d *.hex *.o *.lst
+
 .PHONY: clean bram.ld
 
 # Generar bram.ld directamente desde Makefile
 bram.ld:
 	@echo "MEMORY {"                         >  bram.ld
-	@echo "   BRAM (RWX) : ORIGIN = 0x0000, LENGTH = 0x4000  /* 6kB RAM */" >> bram.ld
+	@echo "   BRAM (RWX) : ORIGIN = 0x0000, LENGTH = 0x4000  /* 16kB RAM */" >> bram.ld
 	@echo "}"                                >> bram.ld
 	@echo "SECTIONS"                         >> bram.ld
 	@echo "{"                                >> bram.ld
 	@echo "    everything :"                 >> bram.ld
 	@echo "    {"                            >> bram.ld
 	@echo "        . = ALIGN(4);"            >> bram.ld
-	@echo "        $(OBJS)(.text)"          >> bram.ld
+	@echo "        $(OBJS)(.text)"           >> bram.ld
 	@echo "        *(.*)"                    >> bram.ld
 	@echo "    } >BRAM"                      >> bram.ld
 	@echo "}"                                >> bram.ld
-
-
-#export PATH=$PATH:/home/carlos/Embedded/litex_work/learn-fpga/FemtoRV/FIRMWARE/TOOLCHAIN/riscv64-unknown-elf-gcc-8.3.0-2020.04.0-x86_64-linux-ubuntu14/bin/

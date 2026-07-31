@@ -1,12 +1,12 @@
 MEMORY {
-   BRAM (RWX) : ORIGIN = 0x0000, LENGTH = 0x4000  /* 6kB RAM */
+   BRAM (RWX) : ORIGIN = 0x0000, LENGTH = 0x4000  /* 16kB RAM */
 }
 SECTIONS
 {
     everything :
     {
         . = ALIGN(4);
-        MiCalculdora_tcl.o (.text)
+        main.o(.text)
         *(.*)
     } >BRAM
 }

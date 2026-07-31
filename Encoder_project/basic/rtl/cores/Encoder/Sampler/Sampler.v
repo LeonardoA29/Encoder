@@ -42,10 +42,10 @@ always @(posedge clk or posedge reset) begin
             end
 
             WAIT: begin
-                if (!init_ff2)
+                // if (!init_ff2)
+                //     state <= START;
+                // else
                     state <= START;
-                else
-                    state <= WAIT;
             end
 
             default: state <= START;

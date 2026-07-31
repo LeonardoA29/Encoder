@@ -101,7 +101,7 @@ module SOC (
 
   peripheral_uart #(
      .clk_freq(26000000),    // 27000000 for gowin 33333333 for efinix
-     .baud(115200)            // 57600 for gowin
+     .baud(230400)            // 57600 for gowin
    ) per_uart(
      .clk(clk),
      .rst(!resetn),
@@ -241,9 +241,9 @@ module SOC (
    peripheral_Encoder Enc0 (
    .clk(clk),
    .reset(!resetn),
-   .d_in(mem_wdata[0]), 
+   .d_in(mem_wdata), 
 	.cs(cs[7]), 
-	.addr(mem_addr[4:0]), 
+	.addr(mem_addr[6:0]), 
 	.rd(rd), 
 	.wr(wr), 
 	.d_out(Encoder_dout),
@@ -293,6 +293,7 @@ module SOC (
       //   9'b000000100: mem_rdata = bin2bcd_dout;
       //   9'b000000010: mem_rdata = Led_dout;
         9'b000000001: mem_rdata = RAM_rdata;
+        default: mem_rdata = 32'b0;
       endcase
   end
  // ============== MUX ========================  // 

@@ -18,6 +18,7 @@ assign expanded_y_in = {y_in[11], y_in};
 
 
 
+
 wire [12:0] X0_out; 
 wire [12:0] Y0_out; 
 wire [13:0] angle0_out; 
@@ -81,8 +82,8 @@ first_Cordic_iteration first_iter (
     .reset(reset),
     .sh(sh),
     .calc(calc),
-    .x_in(expanded_x_in),
-    .y_in(expanded_y_in),
+    .x_in(Offset_x),
+    .y_in(Offset_y),
     .X_out(X0_out),
     .Y_out(Y0_out),
     .angle_out(angle0_out)

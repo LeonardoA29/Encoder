@@ -209,7 +209,7 @@ $(TARGET)_i9.bit: $(TARGET)_i9_out.config
 	ecppack --bootaddr 0 --compress $(BUILD_DIR)/$< --svf $(BUILD_DIR)/${TARGET}.svf --bit $(BUILD_DIR)/$@
 
 configure_i9: ${TARGET}_i9.bit   # TDI:TDO:TCK:TMS
-	sudo openFPGALoader -b colorlight-i9 -m $(BUILD_DIR)/${TARGET}_i9.bit 
+	sudo -E env "PATH=$PATH" openFPGALoader -b colorlight-i9 -m build/SOC_i9.bit
 
 
 .PHONY: clean

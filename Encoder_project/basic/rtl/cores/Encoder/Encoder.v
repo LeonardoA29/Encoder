@@ -31,7 +31,7 @@ module Encoder(
     input y_in_0,
 
     output signed [13:0] angle_out,
-    output [15:0] Speed_out,
+    output signed [15:0] Speed_out,
     output clk_adc_A,
     output clk_adc_B,
     output sampler_done
@@ -63,7 +63,7 @@ wire w_calc;
 
 reg clk_div;
 reg [7:0] Cnt_div;
-localparam Divider = 8'd1;
+localparam Divider = 8'd10;
 
 always @(posedge clk or posedge reset) begin
 
@@ -108,17 +108,35 @@ Control Control0 (
     .sh(w_sh),
     .clk_adc(clk_adc)
 );
+// assign angle_out =  angle_out_cordic;
+// assign Speed_out = Speed_out_derivator;
+assign angle_out =  Offset_y;
+assign Speed_out = Offset_x;
 
-Sampler Sampler0 (
-    .clk(clk_div),
-    .reset(reset),
-    .init(sampler_init),
-    .angle_in(angle_out_cordic),
-    .Speed_in(Speed_out_derivator),
-    .angle_out(angle_out),
-    .Speed_out(Speed_out),
-    .done(sampler_done)
-);
+reg signed [13:0] Offset_x;
+reg signed [15:0] Offset_y;
+
+always @(negedge clk or posedge reset) begin
+    if (reset)begin
+        offset_x <= 0;
+        offset_y <= 0;
+    end else begin
+        Offset_x <= x_in - 11'd2048;
+        Offset_y <= y_in - 11'd2048;
+    end
+end
+
+
+// Sampler Sampler0 (
+//     .clk(clk_div),
+//     .reset(reset),
+//     .init(sampler_init),
+//     .angle_in(angle_out_cordic),
+//     .Speed_in(Speed_out_derivator),
+//     .angle_out(angle_out),
+//     .Speed_out(Speed_out),
+//     .done(sampler_done)
+// );
 
 
 endmodule

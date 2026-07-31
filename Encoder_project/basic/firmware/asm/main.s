@@ -31,20 +31,21 @@ Encoder:
    sw   t1, MODULE_INIT(gp)	
 Start_sampling:
 	li   t1, 1
-	sw   t1, SAMPLER_INIT(gp)     # 1) levanta init
+	li   gp, ENCODER_BASE 
+	sw   t1, SAMPLER_INIT(gp)    
 
 Wait_done:
 	lw   t2, SAMPLER_DONE(gp)
-	beqz t2, Wait_done            # 2) espera a que done suba a 1 (dato listo, en WAIT)
+	# beqz t2, Wait_done            
 
 	lw   a1, ANGLE_OUT(gp)
 	lw   a2, SPEED_OUT(gp)
 
-	sw   zero, SAMPLER_INIT(gp)   # 3) baja init
+	sw   zero, SAMPLER_INIT(gp)   
 
 Wait_idle:
 	lw   t2, SAMPLER_DONE(gp)
-	bnez t2, Wait_idle             # 4) espera a que done vuelva a 0 (confirma que ya esta en START)
+	# bnez t2, Wait_idle             
 
 UART_WRITE:
 	la   a0, Angle

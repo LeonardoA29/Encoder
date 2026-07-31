@@ -8,8 +8,8 @@ from collections import deque
 # CONFIGURACIÓN
 # ============================================================
 
-PUERTO = "/dev/ttyUSB1"
-BAUDIOS = 115200
+PUERTO = "/dev/ttyACM1"
+BAUDIOS = 230400
 MAX_PUNTOS = 300
 
 SerialPort = serial.Serial(PUERTO, BAUDIOS, timeout=1)
