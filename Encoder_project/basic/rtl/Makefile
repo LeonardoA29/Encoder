@@ -28,40 +28,40 @@ COMM_OBJS += \
     cores/Encoder/Sampler/Sampler.v
 
 # #Para modulo 7 Segmentos
-# COMM_OBJS+= cores/MiCalculadora/Led/bcd_siete_seg.v
-# COMM_OBJS+= cores/MiCalculadora/Led/Com.v
-# COMM_OBJS+= cores/MiCalculadora/Led/frac_bcd.v
-# COMM_OBJS+= cores/MiCalculadora/Led/Led.v
-# COMM_OBJS+= cores/MiCalculadora/Led/perip_Led.v
+# 
+# 
+# 
+# 
+# 
 
 # 
-# COMM_OBJS+= cores/MiCalculadora/Teclado/Teclado.v
-# COMM_OBJS+= cores/MiCalculadora/Teclado/perip_Teclado.v
+# 
+# 
 
 #Para BCD a Binario
-COMM_OBJS+= cores/MiCalculadora/Operadores/Bcd_Binario/perip_Rev_Double_Dabble.v
-COMM_OBJS+= cores/MiCalculadora/Operadores/Bcd_Binario/Rev_Double_Dabble.v
+
+
 
 # #Para Binario a BCD
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Binario_Bcd/perip_Double_Dabble.v
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Binario_Bcd/Double_Dabble.v
+# 
+# 
 
 # #Para División
-# COMM_OBJS+= cores/MiCalculadora/Operadores/División/perip_Div.v
-# COMM_OBJS+= cores/MiCalculadora/Operadores/División/Div.v
+# 
+# 
 
 # #Para Multiplicación
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Multiplicación/perip_mult.v                                         
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Multiplicación/mult_32.v                                            
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Multiplicación/acc.v                                                
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Multiplicación/comp.v                                               
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Multiplicación/lsr_mult.v                                           
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Multiplicación/control_mult.v                                       
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Multiplicación/rsr.v     
+# 
+# 
+# 
+# 
+# 
+# 
+# 
 
 # #Para Raiz
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Raiz/perip_Root.v
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Raiz/Root.v
+# 
+# 
 
 # COMM_OBJS+= cores/DISPLAY/Integraciòn/addrCtrl.v
 # COMM_OBJS+= cores/DISPLAY/Integraciòn/SPI.v
