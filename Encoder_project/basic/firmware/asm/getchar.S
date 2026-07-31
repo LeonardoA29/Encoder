@@ -7,6 +7,7 @@
 
 .global	getchar
 .global	getchar1
+
 .type	getchar, @function
 getchar:
 
@@ -27,8 +28,8 @@ getchar:
 	addi sp,sp,4      # save a3, a4, a5 on the stack
         ret 
 
-.global	getchar
-.type	getchar, @function
+
+.type	getchar1, @function
 getchar1:
 
 	addi sp,sp,-4      # save a3, a4, a5 on the stack

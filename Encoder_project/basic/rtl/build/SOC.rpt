@@ -2804,14 +2804,14 @@ Successfully finished Verilog frontend.
 15.30.3. Continuing TECHMAP pass.
 Using template $paramod$514fc941ac1ae997c717a8e6a1180ed8e0cf8fa9$__TRELLIS_DPR16X4_ for cells of type $__TRELLIS_DPR16X4_.
 Using template $paramod$04778961cc1285a5efea28f98f28381eb2862208$__TRELLIS_DPR16X4_ for cells of type $__TRELLIS_DPR16X4_.
-Using template $paramod$8e34c17b36578c2ecd82418f9d90c2c093a8d067$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$28b604c055b04b40025e17a4d1852bd1e96598a3$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$76b7994dbd018712a5cb8390874f624d78e1ba07$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$c888ffb834dfeb264ef53f50dbe0545225948e22$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$b533fcb24bade473f5a2a3584f4edcecab173996$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$1bbcc74c559c9629b2807df2e06cafaa53f7bcee$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$1fb75dfaf269cc47280d4d04b89d1ad5b84823f1$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$81fc9a79f21d546a22db9166b5036f5870574a04$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$1fcb4347c2ddd4e1615f350c9e14212e123e8c86$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$e59ee77159b3f3387a89a28c69648e15c2f93c31$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$817b30aaebaaf2e06b556a2842a60c5e8acca81f$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$f055e5dc682b788ed100b5d8be5dcda82c5e0657$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$e25fb1c4b9f8bf9c463d3f8adbe33ad5b16845dc$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$eca8d77cd3ea49d7bc0ce8b65b278019d14a4ecd$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$58e231f0f3d2179eb2b88ef85976bfdc32a38ff1$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$aa2a31833049fad77516ae006be04a6244e0e708$__DP16KD_ for cells of type $__DP16KD_.
 No more expansions possible.
 <suppressed ~303 debug messages>
 
@@ -5336,6 +5336,6 @@ Found and reported 0 problems.
 16. Executing JSON backend.
 
 Warnings: 9 unique messages, 9 total
-End of script. Logfile hash: 9cb305c013, time: 4.22s, user: 3.24s, system: 0.15s, MEM: 141.20 MB peak
+End of script. Logfile hash: c7a4e8565f, time: 4.35s, user: 3.42s, system: 0.13s, MEM: 141.21 MB peak
 Yosys 0.67+111 (git sha1 4821ed17b-dirty, Release, Clang /usr/bin/clang++ 21.1.8)
-Time spent: 26% 12x techmap (1 sec), 23% 1x abc9_exe (1 sec), ...
+Time spent: 26% 12x techmap (1 sec), 22% 1x abc9_exe (1 sec), ...
