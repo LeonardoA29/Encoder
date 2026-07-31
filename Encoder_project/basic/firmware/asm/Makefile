@@ -9,8 +9,8 @@
 # COMMONFLAGS += -flto
 # *************************************************
 
-OBJECTS = main_terminal_tst.o print_decimal.o putchar.o wait.o global_rev_DD.o getchar.o
-OBJS    = main_terminal_tst.o
+OBJECTS = main_UNO_ADC.o print_decimal.o putchar.o wait.o global_rev_DD.o getchar.o
+OBJS    = main_UNO_ADC.o
 
 CROSS   = riscv32-unknown-elf
 CC      = $(CROSS)-gcc

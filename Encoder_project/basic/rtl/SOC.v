@@ -4,6 +4,9 @@ module SOC (
     output wire  LEDS,   // system LEDs
     input 	     RXD,    // UART receive
     output 	     TXD,    // UART transmit
+
+    input 	     RXD0,    // UART receive
+    output 	     TXD0,    // UART transmit
    //E-paper
     /*input busy,
     output displayReset,
@@ -90,6 +93,7 @@ module SOC (
    );
 
    wire [31:0] uart_dout;
+   wire [31:0] uart1_dout;
    wire [31:0] Encoder_dout;
    wire [31:0] bdc2bin_dout;
    // wire [31:0] mult_dout;
@@ -101,7 +105,7 @@ module SOC (
 
   peripheral_uart #(
      .clk_freq(26000000),    // 27000000 for gowin 33333333 for efinix
-     .baud(230400)            // 57600 for gowin
+     .baud(115200)            // 57600 for gowin
    ) per_uart(
      .clk(clk),
      .rst(!resetn),
@@ -114,6 +118,22 @@ module SOC (
      .uart_tx(TXD),
      .uart_rx(RXD),
      .ledout(LEDS)
+   ); 
+
+   peripheral_uart #(
+     .clk_freq(26000000),    // 27000000 for gowin 33333333 for efinix
+     .baud(115200)            // 57600 for gowin
+   ) per_uart1(
+     .clk(clk),
+     .rst(!resetn),
+     .d_in(mem_wdata),
+     .cs(cs[8]),
+     .addr(mem_addr[4:0]),
+     .rd(rd),
+     .wr(wr),
+     .d_out(uart1_dout),
+     .uart_tx(TXD0),
+     .uart_rx(RXD0)
    ); 
 
    // peripheral_Teclado tcl1(
@@ -268,7 +288,7 @@ module SOC (
   always @*
   begin
       case (mem_addr[31:16])	// direcciones - chip_select
-      //   16'h0043: cs= 9'b100000000; //mult_out
+        16'h0043: cs= 9'b100000000; //uart1_dout
         16'h0041: cs= 9'b010000000;	//Encoder_out
         16'h0042: cs= 9'b001000000;	//bcd2bin_out
         16'h0040: cs= 9'b000100000;	//uart
@@ -284,7 +304,7 @@ module SOC (
   always @*
   begin
       case (cs)
-      //   9'b100000000: mem_rdata = mult_dout;
+        9'b100000000: mem_rdata = uart1_dout;
         9'b010000000: mem_rdata = Encoder_dout;
         9'b001000000: mem_rdata = bdc2bin_dout;
         9'b000100000: mem_rdata = uart_dout;

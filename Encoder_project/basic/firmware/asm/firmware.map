@@ -8,56 +8,58 @@ BRAM             0x0000000000000000 0x0000000000004000 xrw
 Linker script and memory map
 
 
-everything      0x0000000000000000      0x52e
+everything      0x0000000000000000      0x5c6
                 0x0000000000000000                . = ALIGN (0x4)
- main_terminal_tst.o(.text)
- .text          0x0000000000000000      0x138 main_terminal_tst.o
+ main_UNO_ADC.o(.text)
+ .text          0x0000000000000000      0x158 main_UNO_ADC.o
  *(.*)
- .data          0x0000000000000138       0x55 main_terminal_tst.o
- .bss           0x000000000000018d        0x0 main_terminal_tst.o
+ .data          0x0000000000000158       0x55 main_UNO_ADC.o
+ .bss           0x00000000000001ad        0x0 main_UNO_ADC.o
  .riscv.attributes
-                0x000000000000018d       0x1a main_terminal_tst.o
- *fill*         0x00000000000001a7        0x1 
- .text          0x00000000000001a8      0x214 print_decimal.o
-                0x00000000000001a8                udiv32
-                0x00000000000001ec                print_dec
-                0x0000000000000298                print_angle
-                0x000000000000035c                print_speed
-                0x000000000000038c                print_amplitude
- .data          0x00000000000003bc        0x0 print_decimal.o
- .bss           0x00000000000003bc        0x0 print_decimal.o
- .rodata        0x00000000000003bc       0x20 print_decimal.o
+                0x00000000000001ad       0x1a main_UNO_ADC.o
+ *fill*         0x00000000000001c7        0x1 
+ .text          0x00000000000001c8      0x214 print_decimal.o
+                0x00000000000001c8                udiv32
+                0x000000000000020c                print_dec
+                0x00000000000002b8                print_angle
+                0x000000000000037c                print_speed
+                0x00000000000003ac                print_amplitude
+ .data          0x00000000000003dc        0x0 print_decimal.o
+ .bss           0x00000000000003dc        0x0 print_decimal.o
+ .rodata        0x00000000000003dc       0x20 print_decimal.o
  .riscv.attributes
-                0x00000000000003dc       0x1a print_decimal.o
- *fill*         0x00000000000003f6        0x2 
- .text          0x00000000000003f8       0x44 putchar.o
-                0x00000000000003f8                putchar
- .data          0x000000000000043c        0x0 putchar.o
- .bss           0x000000000000043c        0x0 putchar.o
+                0x00000000000003fc       0x1a print_decimal.o
+ *fill*         0x0000000000000416        0x2 
+ .text          0x0000000000000418       0x88 putchar.o
+                0x0000000000000418                putchar
+                0x000000000000045c                putchar1
+ .data          0x00000000000004a0        0x0 putchar.o
+ .bss           0x00000000000004a0        0x0 putchar.o
  .riscv.attributes
-                0x000000000000043c       0x1a putchar.o
- *fill*         0x0000000000000456        0x2 
- .text          0x0000000000000458       0x24 wait.o
-                0x0000000000000458                wait
- .data          0x000000000000047c        0x0 wait.o
- .bss           0x000000000000047c        0x0 wait.o
+                0x00000000000004a0       0x1a putchar.o
+ *fill*         0x00000000000004ba        0x2 
+ .text          0x00000000000004bc       0x24 wait.o
+                0x00000000000004bc                wait
+ .data          0x00000000000004e0        0x0 wait.o
+ .bss           0x00000000000004e0        0x0 wait.o
  .riscv.attributes
-                0x000000000000047c       0x1a wait.o
- *fill*         0x0000000000000496        0x2 
- .text          0x0000000000000498       0x2c global_rev_DD.o
-                0x0000000000000498                RDD_hw
- .data          0x00000000000004c4        0x0 global_rev_DD.o
- .bss           0x00000000000004c4        0x0 global_rev_DD.o
+                0x00000000000004e0       0x1a wait.o
+ *fill*         0x00000000000004fa        0x2 
+ .text          0x00000000000004fc       0x2c global_rev_DD.o
+                0x00000000000004fc                RDD_hw
+ .data          0x0000000000000528        0x0 global_rev_DD.o
+ .bss           0x0000000000000528        0x0 global_rev_DD.o
  .riscv.attributes
-                0x00000000000004c4       0x1a global_rev_DD.o
- *fill*         0x00000000000004de        0x2 
- .text          0x00000000000004e0       0x34 getchar.o
-                0x00000000000004e0                getchar
- .data          0x0000000000000514        0x0 getchar.o
- .bss           0x0000000000000514        0x0 getchar.o
+                0x0000000000000528       0x1a global_rev_DD.o
+ *fill*         0x0000000000000542        0x2 
+ .text          0x0000000000000544       0x68 getchar.o
+                0x0000000000000544                getchar
+                0x0000000000000578                getchar1
+ .data          0x00000000000005ac        0x0 getchar.o
+ .bss           0x00000000000005ac        0x0 getchar.o
  .riscv.attributes
-                0x0000000000000514       0x1a getchar.o
-LOAD main_terminal_tst.o
+                0x00000000000005ac       0x1a getchar.o
+LOAD main_UNO_ADC.o
 LOAD print_decimal.o
 LOAD putchar.o
 LOAD wait.o
