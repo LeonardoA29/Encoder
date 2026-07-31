@@ -48,21 +48,30 @@ process_uart_frame:
     call getchar1
 	call putchar
     li   t0, 0xAA
-    bne  a0, t0, process_uart_frame  # Si no es 0xAA, descartar y seguir esperando
+    bne  a0, t0, process_uart_frame  
 	la   a0, X_dat
 	call putstring
-#
-#    call getchar1
-#    slli t1, a0, 8                  # t1 = X_MSB << 8
-#
-#    call getchar1
-#    or   t1, t1, a0                 # t1 = (X_MSB << 8) | X_LSB
-#
-#    call getchar1
-#    slli t2, a0, 8                  # t2 = Y_MSB << 8
-#
-#    call getchar1
-#    or   t2, t2, a0                 # t2 = (Y_MSB << 8) | Y_LSB
+	li a0, 0x39
+	call putchar1
+    call getchar1
+	call getchar
+    slli t1, a0, 8                  
+	li a0, 0x39
+	call putchar1
+    call getchar1
+    call getchar
+    or   t1, t1, a0                
+	li a0, 0x39
+	call putchar1
+    call getchar1
+    call getchar
+    slli t2, a0, 8   
+	               # t2 = Y_MSB << 8
+	li a0, 0x39
+	call putchar1
+    call getchar1
+    call getchar1
+#    or   t2, t2, a0                
 #
 #    call getchar1
 #    li   t0, 0x55

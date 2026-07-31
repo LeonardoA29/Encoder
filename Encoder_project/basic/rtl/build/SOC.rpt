@@ -2804,14 +2804,14 @@ Successfully finished Verilog frontend.
 15.30.3. Continuing TECHMAP pass.
 Using template $paramod$514fc941ac1ae997c717a8e6a1180ed8e0cf8fa9$__TRELLIS_DPR16X4_ for cells of type $__TRELLIS_DPR16X4_.
 Using template $paramod$04778961cc1285a5efea28f98f28381eb2862208$__TRELLIS_DPR16X4_ for cells of type $__TRELLIS_DPR16X4_.
-Using template $paramod$1fcb4347c2ddd4e1615f350c9e14212e123e8c86$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$e59ee77159b3f3387a89a28c69648e15c2f93c31$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$817b30aaebaaf2e06b556a2842a60c5e8acca81f$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$f055e5dc682b788ed100b5d8be5dcda82c5e0657$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$e25fb1c4b9f8bf9c463d3f8adbe33ad5b16845dc$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$eca8d77cd3ea49d7bc0ce8b65b278019d14a4ecd$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$58e231f0f3d2179eb2b88ef85976bfdc32a38ff1$__DP16KD_ for cells of type $__DP16KD_.
-Using template $paramod$aa2a31833049fad77516ae006be04a6244e0e708$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$d75f3ed760c5b60e871fbcef909820254fa470c5$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$769f5ae6def2f2e56c66fd61f1ac2db0a92cbd05$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$7607837fcf1bde1399623c6223f3f5566d39795f$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$5ad9efe1c243136ed2cf4f3fce8a0982983dca6a$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$5d637688f64176c23adc84b7bbc01484fac543d8$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$0aa9ae1343009939a3109ac455122152467748b5$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$e2f7befa4d7880cbc57a05142810488a3b183a4c$__DP16KD_ for cells of type $__DP16KD_.
+Using template $paramod$828a9ee6e47bf87a4be387dfc28362329c69972b$__DP16KD_ for cells of type $__DP16KD_.
 No more expansions possible.
 <suppressed ~303 debug messages>
 
@@ -4420,9 +4420,9 @@ ABC: Mapping (K=7)  :  lut =   1349  edge =    4768  lev =    8 (0.36)  levB =  
 ABC: LUT = 1349 : 2=173 12.8 %  3=612 45.4 %  4=296 21.9 %  5=221 16.4 %  6=32 2.4 %  7=15 1.1 %  Ave = 3.53
 ABC: + &write -n <abc-temp-dir>/output.aig 
 ABC: + &verify 
-ABC: Networks are equivalent.  Time =     0.10 sec
+ABC: Networks are equivalent.  Time =     0.11 sec
 ABC: + time 
-ABC: elapse: 1.00 seconds, total: 1.00 seconds
+ABC: elapse: 1.05 seconds, total: 1.05 seconds
 
 15.47.23.6. Executing AIGER frontend.
 <suppressed ~10 debug messages>
@@ -5336,6 +5336,6 @@ Found and reported 0 problems.
 16. Executing JSON backend.
 
 Warnings: 9 unique messages, 9 total
-End of script. Logfile hash: c7a4e8565f, time: 4.35s, user: 3.42s, system: 0.13s, MEM: 141.21 MB peak
+End of script. Logfile hash: c3382dba4c, time: 4.48s, user: 3.47s, system: 0.15s, MEM: 141.50 MB peak
 Yosys 0.67+111 (git sha1 4821ed17b-dirty, Release, Clang /usr/bin/clang++ 21.1.8)
 Time spent: 26% 12x techmap (1 sec), 22% 1x abc9_exe (1 sec), ...
