@@ -34,7 +34,7 @@ COMM_OBJS += \
 # COMM_OBJS+= cores/MiCalculadora/Led/Led.v
 # COMM_OBJS+= cores/MiCalculadora/Led/perip_Led.v
 
-# #Para Teclado
+# 
 # COMM_OBJS+= cores/MiCalculadora/Teclado/Teclado.v
 # COMM_OBJS+= cores/MiCalculadora/Teclado/perip_Teclado.v
 

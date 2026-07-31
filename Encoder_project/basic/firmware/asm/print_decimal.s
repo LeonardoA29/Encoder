@@ -180,7 +180,8 @@ print_angle:
 # a0 = valor crudo de 16 bits (se sign-extiende aqui).
 # Salida: [-]D...D\n\r
 # =================================================================
-print_speed:
+print_speed:  
+
     addi sp, sp, -4
     sw   ra, 0(sp)
 
