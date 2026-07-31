@@ -38,9 +38,9 @@ COMM_OBJS += \
 # COMM_OBJS+= cores/MiCalculadora/Teclado/Teclado.v
 # COMM_OBJS+= cores/MiCalculadora/Teclado/perip_Teclado.v
 
-# #Para BCD a Binario
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Bcd_Binario/perip_Rev_Double_Dabble.v
-# COMM_OBJS+= cores/MiCalculadora/Operadores/Bcd_Binario/Rev_Double_Dabble.v
+#Para BCD a Binario
+COMM_OBJS+= cores/MiCalculadora/Operadores/Bcd_Binario/perip_Rev_Double_Dabble.v
+COMM_OBJS+= cores/MiCalculadora/Operadores/Bcd_Binario/Rev_Double_Dabble.v
 
 # #Para Binario a BCD
 # COMM_OBJS+= cores/MiCalculadora/Operadores/Binario_Bcd/perip_Double_Dabble.v

@@ -1,0 +1,66 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+BRAM             0x0000000000000000 0x0000000000004000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+everything      0x0000000000000000      0x52e
+                0x0000000000000000                . = ALIGN (0x4)
+ main_terminal_tst.o(.text)
+ .text          0x0000000000000000      0x138 main_terminal_tst.o
+ *(.*)
+ .data          0x0000000000000138       0x55 main_terminal_tst.o
+ .bss           0x000000000000018d        0x0 main_terminal_tst.o
+ .riscv.attributes
+                0x000000000000018d       0x1a main_terminal_tst.o
+ *fill*         0x00000000000001a7        0x1 
+ .text          0x00000000000001a8      0x214 print_decimal.o
+                0x00000000000001a8                udiv32
+                0x00000000000001ec                print_dec
+                0x0000000000000298                print_angle
+                0x000000000000035c                print_speed
+                0x000000000000038c                print_amplitude
+ .data          0x00000000000003bc        0x0 print_decimal.o
+ .bss           0x00000000000003bc        0x0 print_decimal.o
+ .rodata        0x00000000000003bc       0x20 print_decimal.o
+ .riscv.attributes
+                0x00000000000003dc       0x1a print_decimal.o
+ *fill*         0x00000000000003f6        0x2 
+ .text          0x00000000000003f8       0x44 putchar.o
+                0x00000000000003f8                putchar
+ .data          0x000000000000043c        0x0 putchar.o
+ .bss           0x000000000000043c        0x0 putchar.o
+ .riscv.attributes
+                0x000000000000043c       0x1a putchar.o
+ *fill*         0x0000000000000456        0x2 
+ .text          0x0000000000000458       0x24 wait.o
+                0x0000000000000458                wait
+ .data          0x000000000000047c        0x0 wait.o
+ .bss           0x000000000000047c        0x0 wait.o
+ .riscv.attributes
+                0x000000000000047c       0x1a wait.o
+ *fill*         0x0000000000000496        0x2 
+ .text          0x0000000000000498       0x2c global_rev_DD.o
+                0x0000000000000498                RDD_hw
+ .data          0x00000000000004c4        0x0 global_rev_DD.o
+ .bss           0x00000000000004c4        0x0 global_rev_DD.o
+ .riscv.attributes
+                0x00000000000004c4       0x1a global_rev_DD.o
+ *fill*         0x00000000000004de        0x2 
+ .text          0x00000000000004e0       0x34 getchar.o
+                0x00000000000004e0                getchar
+ .data          0x0000000000000514        0x0 getchar.o
+ .bss           0x0000000000000514        0x0 getchar.o
+ .riscv.attributes
+                0x0000000000000514       0x1a getchar.o
+LOAD main_terminal_tst.o
+LOAD print_decimal.o
+LOAD putchar.o
+LOAD wait.o
+LOAD global_rev_DD.o
+LOAD getchar.o
+OUTPUT(firmware.elf elf32-littleriscv)

@@ -82,8 +82,8 @@ first_Cordic_iteration first_iter (
     .reset(reset),
     .sh(sh),
     .calc(calc),
-    .x_in(Offset_x),
-    .y_in(Offset_y),
+    .x_in(expanded_x_in),
+    .y_in(expanded_y_in),
     .X_out(X0_out),
     .Y_out(Y0_out),
     .angle_out(angle0_out)
@@ -247,6 +247,7 @@ Cordic_iteration #(
     .X_out(Xend_out),
     .Y_out(Yend_out),
     .angle_out(angle_out)
+    
 );
 
 escale_magnitude escale (

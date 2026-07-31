@@ -3,7 +3,8 @@ module Encoder(
     input reset,
     input sampler_init,
     input module_init,
-
+    input [11:0] test_x_in,
+    input [11:0] test_y_in,
     input x_in_11,
     input x_in_10,
     input x_in_9,
@@ -31,7 +32,7 @@ module Encoder(
     input y_in_0,
 
     output signed [13:0] angle_out,
-    output signed [15:0] Speed_out,
+    output signed [13:0] Speed_out,
     output clk_adc_A,
     output clk_adc_B,
     output sampler_done
@@ -80,13 +81,32 @@ always @(posedge clk or posedge reset) begin
     end  
 end
 
+ assign angle_out =  angle_out_cordic;
+ assign Speed_out = Speed_out_derivator;
+//  assign angle_out =  Offset_y;
+//  assign Speed_out = Offset_x;
+
+reg signed [11:0] Offset_x;
+reg signed [11:0] Offset_y;
+
+
+always @(posedge clk or posedge reset) begin
+    if (reset)begin
+        offset_x <= 0;
+        offset_y <= 0;
+    end else begin
+        Offset_x <= test_x_in - 12'd2048;
+        Offset_y <= test_y_in - 12'd2048;
+    end
+end
+
 Cordic Cordic0 (
     .clk(clk_div),
     .reset(reset),
     .calc(w_calc),
     .sh(w_sh),
-    .x_in(x_in),
-    .y_in(y_in),
+    .x_in(Offset_x),
+    .y_in(Offset_y),
     .angle_out(angle_out_cordic),
     .amplitude_out(amplitude_out_cordic)
 );
@@ -108,23 +128,7 @@ Control Control0 (
     .sh(w_sh),
     .clk_adc(clk_adc)
 );
-// assign angle_out =  angle_out_cordic;
-// assign Speed_out = Speed_out_derivator;
-assign angle_out =  Offset_y;
-assign Speed_out = Offset_x;
 
-reg signed [13:0] Offset_x;
-reg signed [15:0] Offset_y;
-
-always @(negedge clk or posedge reset) begin
-    if (reset)begin
-        offset_x <= 0;
-        offset_y <= 0;
-    end else begin
-        Offset_x <= x_in - 11'd2048;
-        Offset_y <= y_in - 11'd2048;
-    end
-end
 
 
 // Sampler Sampler0 (

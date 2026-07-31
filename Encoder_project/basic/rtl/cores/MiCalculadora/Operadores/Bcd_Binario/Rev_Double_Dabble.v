@@ -25,7 +25,7 @@ wire w_LSBN5;
 wire w_LSBN6;
 wire w_LSB7;
 
-Control Control0(.clk(clk),.reset(reset),.init(init),.z(w_z),.dn(done),.ld(w_ld),.ld_Nib(w_ld_Nib),.sh(w_sh),.chk(w_chk));
+Control_RDD Control0(.clk(clk),.reset(reset),.init(init),.z(w_z),.dn(done),.ld(w_ld),.ld_Nib(w_ld_Nib),.sh(w_sh),.chk(w_chk));
 out_reg out_reg0(.reset(reset),.clk(clk),.ld(w_ld),.sh(w_sh),.LSB_N0(w_LSBN0),.out_Bin(out_Bin),.z(w_z));
 
 R_Nbl R_Nbl0(.reset(reset),.clk(clk),.LSB(w_LSBN1),.ld(w_ld),.ld_Nib(w_ld_Nib),.sh(w_sh),.chk(w_chk),
@@ -112,7 +112,7 @@ endmodule
 
 //MÁQUINA DE CONTROL
 
-module Control(
+module Control_RDD(
     input       clk,
     input       reset,
     input       init,

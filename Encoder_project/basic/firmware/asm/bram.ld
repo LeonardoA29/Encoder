@@ -6,7 +6,7 @@ SECTIONS
     everything :
     {
         . = ALIGN(4);
-        main.o(.text)
+        main_terminal_tst.o(.text)
         *(.*)
     } >BRAM
 }

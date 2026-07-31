@@ -91,7 +91,7 @@ module SOC (
 
    wire [31:0] uart_dout;
    wire [31:0] Encoder_dout;
-   // wire [31:0] bdc2bin_dout;
+   wire [31:0] bdc2bin_dout;
    // wire [31:0] mult_dout;
    // wire [31:0] div_dout;
    // wire [31:0] root_dout;
@@ -135,16 +135,16 @@ module SOC (
    //    .R3(R3)
    // );
 
-   // peripheral_Rdd RDD1(
-   //    .clk (clk), 
-   //    .reset (!resetn), 
-   //    .d_in (mem_wdata), 
-   //    .cs (cs[6]), 
-   //    .addr (mem_addr[4:0]), 
-   //    .rd (rd), 
-   //    .wr(wr), 
-   //    .d_out (bdc2bin_dout) 
-   // );
+   peripheral_Rdd RDD1(
+      .clk (clk), 
+      .reset (!resetn), 
+      .d_in (mem_wdata), 
+      .cs (cs[6]), 
+      .addr (mem_addr[4:0]), 
+      .rd (rd), 
+      .wr(wr), 
+      .d_out (bdc2bin_dout) 
+   );
    
 	// peripheral_mult mult1 (
 	// 	.clk(clk), 
@@ -270,7 +270,7 @@ module SOC (
       case (mem_addr[31:16])	// direcciones - chip_select
       //   16'h0043: cs= 9'b100000000; //mult_out
         16'h0041: cs= 9'b010000000;	//Encoder_out
-      //   16'h0042: cs= 9'b001000000;	//bcd2bin_out
+        16'h0042: cs= 9'b001000000;	//bcd2bin_out
         16'h0040: cs= 9'b000100000;	//uart
       //   16'h0044: cs= 9'b000010000;	//div_out
       //   16'h0045: cs= 9'b000001000; //root_out
@@ -286,7 +286,7 @@ module SOC (
       case (cs)
       //   9'b100000000: mem_rdata = mult_dout;
         9'b010000000: mem_rdata = Encoder_dout;
-      //   9'b001000000: mem_rdata = bdc2bin_dout;
+        9'b001000000: mem_rdata = bdc2bin_dout;
         9'b000100000: mem_rdata = uart_dout;
       //   9'b000010000: mem_rdata = div_dout;
       //   9'b000001000: mem_rdata = root_dout;
